@@ -16,6 +16,10 @@ body {
 }
 
 .sidebar li {
+  list-style-type: none;
+}
+
+.sidebar li a {
   padding: 6px 8px 6px 16px;
   text-decoration: none;
   font-size: 25px;
@@ -23,18 +27,11 @@ body {
   display: block;
 }
 
-.sidebar li:hover {
+.sidebar li a:hover {
   color: lime;
 }
 
 .main {
   margin-left: 250px; /* this needs to be same as sidebar width. Would it be clever to use a variable here? */
   padding: 0px 10px;
-}
-
-
-/* On smaller screens, where height is less than 450px, change the style of the sidebar (less padding and a smaller font size) */
-@media screen and (max-height: 450px) {
-  .sidenav {padding-top: 15px;}
-  .sidenav a {font-size: 18px;}
 }
