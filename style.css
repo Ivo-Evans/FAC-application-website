@@ -28,7 +28,8 @@ body {
 }
 
 .sidebar li a:hover {
-  color: lime;
+  color: black;
+  background-color: white;
 }
 
 .main {
