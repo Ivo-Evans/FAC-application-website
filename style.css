@@ -1,3 +1,40 @@
 body {
   font-family: monospace;
 }
+
+.sidebar {
+  width: 250px;
+  height: 100%;
+  background: black;
+  position: fixed; /* will stay in place when I scroll */
+  z-index: 1; /* on top of other elements */
+  top: 0; /* at the top of the page */
+  left: 0; /* at the left of the page */
+  background-color: #111;
+  overflow-x: hidden; /* no horizontal scrolling */
+  padding-top: 60px; /* so they start below the title */
+}
+
+.sidebar li {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #FFF;
+  display: block;
+}
+
+.sidebar li:hover {
+  color: lime;
+}
+
+.main {
+  margin-left: 250px; /* this needs to be same as sidebar width. Would it be clever to use a variable here? */
+  padding: 0px 10px;
+}
+
+
+/* On smaller screens, where height is less than 450px, change the style of the sidebar (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
