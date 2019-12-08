@@ -1,4 +1,5 @@
-body {
+:root {
+  scroll-behavior: smooth; /* Remember to add a section break div at the end, so the browser can scroll far enough */
   font-family: 'Roboto Mono', monospace;
 }
 
@@ -41,4 +42,8 @@ body {
 .selfie {
   width: 50%;
   float: right;
+}
+
+.section_break {
+  height: 100vh;
 }
