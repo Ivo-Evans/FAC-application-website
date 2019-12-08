@@ -1,6 +1,8 @@
 :root {
-  scroll-behavior: smooth; /* Remember to add a section break div at the end, so the browser can scroll far enough */
+  scroll-behavior: smooth; /* Remember to add a section break div at the end, so the browser can scroll far enough
+  n.b. that, apparently, there are some js functions like window.scroll that do this. Maybe you could use them, to introduce a 'rush' effect. See this site: https://css-tricks.com/snippets/jquery/smooth-scrolling/*/
   font-family: 'Roboto Mono', monospace;
+  overflow: hidden;
 }
 
 .sidebar {
@@ -42,6 +44,11 @@
 .selfie {
   width: 50%;
   float: right;
+}
+
+.contact_me_bar{
+  margin-top: 60px; /* The idea here is that, when you land, the left navbar, introductory text, and contact box all sit on a line, underneath the title. But I've used padding-top, here, because I hope that later, if I make this boxe's position sticky, rather than fixed, it will move later than the rest of the page elements (it will first touch the top of the window, then get pulled along with the contents) */
+  margin-right: 10px;
 }
 
 .section_break {
