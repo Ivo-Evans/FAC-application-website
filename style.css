@@ -32,4 +32,5 @@ body {
 .main {
   margin-left: 250px; /* this needs to be same as sidebar width. Would it be clever to use a variable here? */
   padding: 0px 10px;
+  display: flex;
 }
