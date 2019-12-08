@@ -3,7 +3,7 @@ body {
 }
 
 .sidebar {
-  width: 250px;
+  width: 200px;
   height: 100%;
   background: black;
   position: fixed; /* will stay in place when I scroll */
@@ -30,7 +30,10 @@ body {
 }
 
 .main {
-  margin-left: 250px; /* this needs to be same as sidebar width. Would it be clever to use a variable here? */
-  padding: 0px 10px;
+  margin-left: 200px; /* this needs to be same as sidebar width. Would it be clever to use a variable here? */
   display: flex;
+}
+
+.central_area {
+  padding: 0px 50px;
 }
