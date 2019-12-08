@@ -15,21 +15,18 @@ body {
   padding-top: 60px; /* so they start below the title */
 }
 
-.sidebar li {
-  list-style-type: none;
-}
-
-.sidebar li a {
+.sidebar p a {
   padding: 6px 8px 6px 16px;
+  margin: 0;
   text-decoration: none;
   font-size: 25px;
   color: #FFF;
   display: block;
 }
 
-.sidebar li a:hover {
+.sidebar p a:hover {
   color: black;
-  background-color: white;
+  background-color: white
 }
 
 .main {
