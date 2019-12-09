@@ -5,8 +5,8 @@
   /* overflow: hidden; */ /* You should disable scrolling only for very-big screens */
 }
 
-.sidebar {
-  width: 200px;
+.left_sidebar_nav {
+  width: 250px;
   height: 100%;
   position: fixed; /* will stay in place when I scroll */
   z-index: 1; /* on top of other elements */
@@ -17,20 +17,9 @@
   padding-top: 60px; /* so they start below the title */
 }
 
-.sidebar p a {
-  padding: 6px 8px 6px 16px;
-  margin: 0;
-  text-decoration: none;
-  color: #FFF;
-  display: block;
-}
-
-.sidebar p a:hover {
-  color: black;
-  background-color: white
-}
-
-.contact_me_bar{
+.right_sidebar_contact{
+  height: 100%;
+  width: 250px;
   position: fixed; /* will stay in place when I scroll */
   z-index: 1; /* on top of other elements */
   top: 0; /* at the top of the page */
@@ -41,9 +30,23 @@
 
 }
 
+.left_sidebar_nav p a {
+  padding: 6px 8px 6px 16px;
+  margin: 0;
+  text-decoration: none;
+  color: #FFF;
+  display: block;
+}
+
+.left_sidebar_nav p a:hover {
+  color: black;
+  background-color: white
+}
+
+
 .main {
-  margin-left: 200px; /* this needs to be same as sidebar width. Would it be clever to use a variable here? */
-  margin-right: 200px; /* ibid */
+  margin-left: 250px; /* this needs to be same as sidebar width. Would it be clever to use a variable here? */
+  margin-right: 250px; /* ibid */
   padding: 0px 50px;
 /*  display: flex; */
 }
