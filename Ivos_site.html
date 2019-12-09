@@ -10,25 +10,40 @@
     <p><a href="#Ruby">Adventures in Ruby</a></p>
     <p><a>Header</a></p>
   </div>
-  <div class="main">
-    <div class="central_area">
-      <h1 id="main_title">Hello World! Come on in...</h1>
-      <p><img class = "selfie" src="me_above_tbilisi.jpg"/> <!-- You should pick a more welcoming picture. You look cold here. -->
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce condimentum diam et accumsan vehicula. Donec ac felis feugiat, ultricies lectus ac, pretium odio. Nunc tempor diam erat, vel malesuada nisl accumsan non. Pellentesque eu sodales ex. Praesent bibendum nunc fringilla, luctus nunc dictum, varius elit. Maecenas viverra ipsum ut ligula feugiat fermentum. Vivamus sollicitudin dictum neque vitae vestibulum. Nulla vestibulum, magna in malesuada gravida, risus purus imperdiet dolor, ut faucibus ex ex ac ligula. Ut vitae efficitur purus. Proin sit amet sem nec quam vestibulum consequat. Curabitur a est tempor, egestas lectus a, imperdiet felis. Nulla sed ullamcorper erat.
-      </p>
-      <p> Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Quisque tincidunt semper blandit. Pellentesque rhoncus mi non risus aliquet, quis tristique risus mattis. Suspendisse id sapien quis odio facilisis venenatis. Curabitur dapibus hendrerit enim elementum malesuada. Morbi rhoncus libero sit amet mi tempus dictum.
-      </p>
-      <div class="section_break"></div>
-      <h2 id="Ruby">Adventures in Ruby</h2>
-      <p>Before applying to Founders and Coders, I was learning Ruby. I'm still proud of my creations, however simple. Here are some of the things I worked on:</p>
-      <div class="section_break"></div>
-  </div>
   <div class ="contact_me_bar">
     <h3>Find me on:</h3>
     <p><a href="https://github.com/ievans147" target="_blank">GitHub</a></p>
     <p><a href="https://www.freecodecamp.org/fcc6941e898" target="_blank">FreeCodeCamp</a></p>
     <p><a href="https://www.codewars.com/users/ievans147" target="_blank">Codewars</a></p>
     <p><a href="mailto:ievans.storrie@gmail.com" target="blank">Email</a><br>(ievans.storrie@gmail.com)</p>
+  </div>
+  <div class="main">
+    <div class="central_area">
+      <h1 id="main_title">Hello World! Come on in...</h1>
+      <p><img class = "selfie" src="me_above_tbilisi.jpg"/> <!-- You should pick a more welcoming picture. You look cold here. -->
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce condimentum diam et accumsan vehicula. Donec ac felis feugiat, ultricies lectus ac, pretium odio. Nunc tempor diam erat, vel malesuada nisl accumsan non. Pellentesque eu sodales ex. Praesent bibendum nunc fringilla, luctus nunc dictum, varius elit. Maecenas viverra ipsum ut ligula feugiat fermentum. Vivamus sollicitudin dictum neque vitae vestibulum. Nulla vestibulum, magna in malesuada gravida, risus purus imperdiet dolor, ut faucibus ex ex ac ligula. Ut vitae efficitur purus. Proin sit amet sem nec quam vestibulum consequat. Curabitur a est tempor, egestas lectus a, imperdiet felis. Nulla sed ullamcorper erat.</p>
+      <p> Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Quisque tincidunt semper blandit. Pellentesque rhoncus mi non risus aliquet, quis tristique risus mattis. Suspendisse id sapien quis odio facilisis venenatis. Curabitur dapibus hendrerit enim elementum malesuada. Morbi rhoncus libero sit amet mi tempus dictum.</p>
+    </div>
+    <div class="section_break"></div>
+    <div class="Ruby">
+      <h2 id="Ruby">Adventures in Ruby</h2>
+      <p>Before applying to Founders and Coders, I was learning Ruby. Here are some of the things I worked on:</p>
+      <h3 class="project_title"><a href="#" target="-blank">Alarm clock</a></h3>
+      <p>I made this after asking a friend what programs he needed on his computer. It didn’t take me much more than an hour, but I enjoyed making it. I like how the project, in combination with my modest abilities, forced me to use and abuse Ruby’s kernel features, like while-loops and the bell terminal output. The alarm clock is a bit ‘hacky’, and for some reason, that makes me proud.</p>
+      <h3 class="project_title"><a href="#" target="-blank">Web Guesser</a></h3>
+      <p>This was a brief experiment in Sinatra, a Web Application Framework for Ruby, which I completed as I was finishing <a href="https://learnrubythehardway.org/book/preface.html" target="_blank">Learn Ruby the Hard Way</a> and just before I expressed interest in Founders and Coders. I followed a tutorial from <a href="http://tutorials.jumpstartlab.com/projects/web_guesser.html" target="_blank">JumpStartLabs</a>.
+      <h3 class="project_title"><a href="#" target="-blank">WhatsApp analyser</a></h3>
+      <p class="testimonial"><i>"Wow Ivo, this could really save a relationship"</i><br>My girlfriend</p>
+      <p> This is by far the most ambitious project of mine. It takes a whatsapp chat exported to a .txt file (press the three vertically stacked dots, then 'more', then 'export chat'), parses it, analyses it according to 17 metrics, and then presents the data in a table, graph or bar-chart via a desktop GUI. It allows parameterisation (such as participant and date-range selection), which is where the most interesting programming challenges came from. Although it works (try it out!) it's unfinished. Here are some areas for improvement: </p>
+      <ul>
+        <li>Running it currently requires both CLI and GUI; I need to finish the transition to GUI</li>
+        <li>It doesn't currently use Bundler (but requires the gem Flammarion)</li>
+        <li>There are more graphable metrics to be added.</li>
+        <li>I know of at least one WhatsApp chat file for which the parser throws an error</li>
+        <li>Instead of one long file (500+ lines), I would like to separate it out into different files with different modules</li>
+      </ul>
+    </div>
+    <div class="section_break"></div>
   </div>
   </div>
 </body>
