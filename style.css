@@ -43,6 +43,10 @@
 }
 
 
+#main_title {
+  margin-left: 300px; /* sidebar width + .main padding */
+}
+
 .main {
   margin-left: 250px; /* this needs to be same as sidebar width. Would it be clever to use a variable here? */
   margin-right: 250px; /* ibid */
