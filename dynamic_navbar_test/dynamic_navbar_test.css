@@ -1,0 +1,31 @@
+.hamburger {
+  overflow: hidden;
+  height: 30px;
+  width: 30px;
+}
+
+.side-nav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #000;
+  overflow-x: hidden;
+  padding-top: 60px; /*consider removing for mobiles*/
+  transition: 0.3s;
+}
+
+.side-nav a {
+  padding: 10px 10px 10px 30px;
+  text-decoration: none;
+  font-size: 16px;
+  color: #FFF;
+  display: block;
+}
+
+.side-nav a:click {
+  color: #000;
+  background-color: #FFF;
+} /* no need for a hover on the mobile version, but not sure if click is effective  */

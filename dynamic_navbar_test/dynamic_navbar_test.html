@@ -1,11 +1,35 @@
 <!DOCTYPE html>
 <html>
   <head>
-
+    <title>Responsive navbar</title>
+    <link rel="stylesheet" href="dynamic_navbar_test.css">
   </head>
   <body>
-    <div>
+    <div class="hamburger">
+      <a href=# onclick="openSideMenu()">
+          <svg width="30" height="30"> <!-- This is the hambgurger. 30 is the length of the bars -->
+            <path d="M0,5 30,5" stroke="#000" stroke-width="5"/>
+            <path d="M0,14 30,14" stroke="#000" stroke-width="5"/>
+            <path d="M0,23 30,23" stroke="#000" stroke-width="5"/>
+          </svg>
+        </a>
+    </div>
+    <nav id="side-menu" class="side-nav">
+      <a href="#" onclick="closeSideMenu()">link</a>
+      <a href="#" onclick="closeSideMenu()">link</a>
+      <a href="#" onclick="closeSideMenu()">link</a>
+    </nav> <!--id for JS, class for CSS -->
+  </div class="lorem_ipsum">
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas efficitur nisi id consectetur rutrum. Proin nec porttitor elit. Suspendisse tincidunt ex a quam pretium, et viverra quam vehicula. Praesent eu lacus leo. Curabitur in facilisis neque, id commodo augue. Fusce faucibus pharetra posuere. Aenean condimentum lectus ipsum, vel gravida risus iaculis et. Nam faucibus convallis congue. Pellentesque et lacus ut odio efficitur venenatis tempor sit amet elit. Donec felis tortor, lacinia sit amet lacus non, iaculis sodales augue. Suspendisse semper quam sed turpis ornare dignissim. In non bibendum lacus. Pellentesque ornare risus quis est blandit tristique.</p>
     </div>
+    <script>
+      function openSideMenu(){
+        document.getElementById('side-menu').style.width = '250px';
+      }
+
+      function closeSideMenu(){
+        document.getElementById('side-menu').style.width = '0';
+      }
+    </script>
   </body>
 </html>
