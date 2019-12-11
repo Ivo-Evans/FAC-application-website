@@ -43,7 +43,7 @@ central area: no margins or anything
   display: block;
 }
 
-.right_sidebar_contact {
+.contact_bar {
   margin-left: 20px;
   display: flex;
   flex-wrap: wrap;
