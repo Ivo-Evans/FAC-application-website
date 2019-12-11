@@ -29,7 +29,7 @@
   padding-top: 60px; /* so they start below the title */
 } /* You could put common elements of these sidebars into a variable. The question is, how are you going to scale this structure to mobile devices?*/
 
-.left_sidebar_nav p a {
+.left_sidebar_nav a {
   padding: 6px 8px 6px 16px;
   margin: 0;
   text-decoration: none;
@@ -37,7 +37,7 @@
   display: block;
 }
 
-.left_sidebar_nav p a:hover {
+.left_sidebar_nav a:hover {
   color: black;
   background-color: white
 }
