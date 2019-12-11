@@ -1,3 +1,31 @@
 :root {
+  scroll-behavior: smooth; /* Remember to add a section break div at the end, so the browser can scroll far enough
+  n.b. that, apparently, there are some js functions like window.scroll that do this. Maybe you could use them, to introduce a 'rush' effect. See this site: https://css-tricks.com/snippets/jquery/smooth-scrolling/*/
+  font-family: 'Roboto Mono', monospace;
+  /* overflow: hidden; */ /* You should disable scrolling only for very-big screens */
   background-color: red;
+}
+
+/* right sidebar: flex row with wrap. Font smaller.
+left sidebar: invisible for this commit. You could even comment it out in the html
+central area: no margins or anything
+*/
+
+
+.selfie {
+  width: 50%;
+  float: right;
+  padding-left: 10px;
+}
+
+.section_break {
+  height: 100vh;
+}
+
+.project_title {
+  margin-top: 70px;
+}
+
+.testimonial {
+  text-align: right;
 }
