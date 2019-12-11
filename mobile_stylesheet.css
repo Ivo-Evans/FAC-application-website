@@ -5,6 +5,7 @@
   /* overflow: hidden; */ /* You should disable scrolling only for very-big screens */
 }
 
+
 /* right sidebar: flex row with wrap. Font smaller.
 left sidebar: invisible for this commit. You could even comment it out in the html
 central area: no margins or anything
@@ -17,7 +18,7 @@ central area: no margins or anything
 .dynamic_hamburger_button {
   overflow: hidden;
   height: 30px;
-  width: 30px;
+  width: 15px;
   position: fixed;
 }
 
@@ -43,6 +44,7 @@ central area: no margins or anything
 }
 
 .right_sidebar_contact {
+  margin-left: 20px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -68,4 +70,12 @@ central area: no margins or anything
 
 .testimonial {
   text-align: right;
+}
+
+#main_title {
+  margin-left: 20px;
+}
+
+.section_content {
+  margin-left: 20px;
 }
