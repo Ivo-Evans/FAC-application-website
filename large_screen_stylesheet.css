@@ -51,7 +51,6 @@
   margin-left: 250px; /* this needs to be same as sidebar width. Would it be clever to use a variable here? */
   margin-right: 250px; /* ibid */
   padding: 0px 50px;
-/*  display: flex; */
 }
 
 .selfie {
