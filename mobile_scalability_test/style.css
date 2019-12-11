@@ -27,6 +27,8 @@
   background-color: #FFF;
   overflow-x: hidden; /* no horizontal scrolling */
   padding-top: 60px; /* so they start below the title */
+  display: flex;
+  flex-direction: column;
 } /* You could put common elements of these sidebars into a variable. The question is, how are you going to scale this structure to mobile devices?*/
 
 .left_sidebar_nav p a {
@@ -42,6 +44,9 @@
   background-color: white
 }
 
+.main_title {
+  margin-left: 250px;
+}
 
 .main {
   margin-left: 250px; /* this needs to be same as sidebar width. Would it be clever to use a variable here? */
@@ -66,4 +71,10 @@
 
 .testimonial {
   text-align: right;
+}
+
+@media only screen and (max-width: 800px;) {
+  body {
+    background-color: red;
+  }
 }
