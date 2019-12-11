@@ -8,7 +8,21 @@
 </head>
 <body>
   <h1 id="main_title">Hello World! Come on in...</h1>
-  <nav class="left_sidebar_nav">
+  <div class="dynamic_hanmburger_button">
+    <a href=# onclick="openSideMenu()">
+      <svg width="30" height="30"> <!-- This is the hambgurger. 30 is the length of the bars -->
+        <path d="M0,5 30,5" stroke="#000" stroke-width="5"/>
+        <path d="M0,14 30,14" stroke="#000" stroke-width="5"/>
+        <path d="M0,23 30,23" stroke="#000" stroke-width="5"/>
+      </svg>
+    </a>
+  </div>
+  <nav class="left_sidebar_dynamic" id="side-menu">
+    <a href="#" onclick="closeSideMenu()">link</a>
+    <a href="#" onclick="closeSideMenu()">link</a>
+    <a href="#" onclick="closeSideMenu()">link</a>
+  </nav>
+  <nav class="left_sidebar_static">
     <a href="#main_title">Home</a>
     <a href="#Ruby">Adventures in Ruby</a>
     <a>Header_two</a>
@@ -48,4 +62,13 @@
     <div class="section_break"></div>
   </div>
   </div>
+  <script>
+    function openSideMenu(){
+      document.getElementById('side-menu').style.width = '250px';
+    }
+
+    function closeSideMenu(){
+      document.getElementById('side-menu').style.width = '0';
+    }
+  </script>
 </body>

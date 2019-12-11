@@ -5,7 +5,7 @@
   /* overflow: hidden; */ /* You should disable scrolling only for very-big screens */
 }
 
-.left_sidebar_nav {
+.left_sidebar_static {
   width: 250px;
   height: 100%;
   position: fixed; /* will stay in place when I scroll */
@@ -29,7 +29,15 @@
   padding-top: 60px; /* so they start below the title */
 } /* You could put common elements of these sidebars into a variable. The question is, how are you going to scale this structure to mobile devices?*/
 
-.left_sidebar_nav a {
+.left_sidebar_dynamic {
+  display: none;
+}
+
+.dynamic_handburger_button {
+  display: none;
+}
+
+.left_sidebar_static a {
   padding: 6px 8px 6px 16px;
   margin: 0;
   text-decoration: none;
@@ -37,7 +45,7 @@
   display: block;
 }
 
-.left_sidebar_nav a:hover {
+.left_sidebar_static a:hover {
   color: black;
   background-color: white
 }
