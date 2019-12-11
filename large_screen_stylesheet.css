@@ -53,6 +53,7 @@
 
 #main_title {
   margin-left: 300px; /* sidebar width + .main padding */
+  margin-right: 250px;
 }
 
 .main {
