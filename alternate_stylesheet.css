@@ -3,14 +3,21 @@
   n.b. that, apparently, there are some js functions like window.scroll that do this. Maybe you could use them, to introduce a 'rush' effect. See this site: https://css-tricks.com/snippets/jquery/smooth-scrolling/*/
   font-family: 'Roboto Mono', monospace;
   /* overflow: hidden; */ /* You should disable scrolling only for very-big screens */
-  background-color: red;
 }
 
 /* right sidebar: flex row with wrap. Font smaller.
 left sidebar: invisible for this commit. You could even comment it out in the html
 central area: no margins or anything
 */
+.right_sidebar_contact {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
 
+.contact_header {
+  font-size: 16px;
+}
 
 .selfie {
   width: 50%;
