@@ -43,15 +43,8 @@ central area: no margins or anything
   display: block;
 }
 
-.contact_bar {
-  margin-left: 20px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
-
-.contact_header {
-  font-size: 16px;
+.contact_bar_static {
+  display: none;
 }
 
 .selfie {
