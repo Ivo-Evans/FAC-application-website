@@ -14,7 +14,7 @@
   left: 0; /* at the left of the page */
   background-color: #111;
   overflow-x: hidden; /* no horizontal scrolling */
-  padding-top: 60px; /* so they start below the title */
+  padding-top: 130px; /* so they start below the title */
 }
 
 .contact_bar{
@@ -26,7 +26,7 @@
   right: 0; /* at the right of the page */
   background-color: #FFF;
   overflow-x: hidden; /* no horizontal scrolling */
-  padding-top: 60px; /* so they start below the title */
+  padding-top: 110px; /* so they start below the title */
 } /* You could put common elements of these sidebars into a variable. The question is, how are you going to scale this structure to mobile devices?*/
 
 .left_sidebar_dynamic {
