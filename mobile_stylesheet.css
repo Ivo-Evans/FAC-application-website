@@ -38,9 +38,8 @@ central area: no margins or anything
 }
 
 .left_sidebar_dynamic a {
-  padding: 10px 10px 10px 30px;
+  padding: 6px 8px 6px 16px;
   text-decoration: none;
-  font-size: 16px;
   color: #FFF;
   display: block;
 }
