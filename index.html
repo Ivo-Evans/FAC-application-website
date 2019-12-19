@@ -1,7 +1,8 @@
 <!DOCTYPE html>
-<head>
+<head lang="en">
   <title>Ivo Evans</title>
   <!-- Stylesheets: one for large *windows*, one for small (laptop) windows, one for small *devices* (mobiles) -->
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" media="screen and (min-width: 800px)" href="./large_screen_stylesheet.css"/>
   <link rel="stylesheet" media="screen and (max-width: 800px)" href="./mobile_stylesheet.css" />
@@ -10,7 +11,7 @@
 </head>
 <body>
   <h1 id="main_title">Hello World! Come on in...</h1>
-  <div class="dynamic_hamburger_button"> <!-- TODO: work out why this hamburger is pushing the main paragraph text down even when the hamburger is set to display: none; , fix this issue, and then move left and right static sidebars back up -->
+  <div class="dynamic_hamburger_button"> <!-- TODO: work out why this hamburger is pushing the main paragraph text down even when the hamburger is set to display: none; , fix this issue, and then move left and right static sidebars back up. Something to do with z-indexes?? -->
     <a onclick="openSideMenu()">
       <svg width="25" height="30"> <!--TODO: either master SVG path tags or work out a different way to make the hamburger. Either way, make a smaller, squarer, and prettier menu bar -->
         <path d="M0,5 25,5" stroke="#000" stroke-width="5"/>
@@ -51,7 +52,7 @@
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce condimentum diam et accumsan vehicula. Donec ac felis feugiat, ultricies lectus ac, pretium odio. Nunc tempor diam erat, vel malesuada nisl accumsan non. Pellentesque eu sodales ex. Praesent bibendum nunc fringilla, luctus nunc dictum, varius elit. Maecenas viverra ipsum ut ligula feugiat fermentum. Vivamus sollicitudin dictum neque vitae vestibulum. Nulla vestibulum, magna in malesuada gravida, risus purus imperdiet dolor, ut faucibus ex ex ac ligula. Ut vitae efficitur purus. Proin sit amet sem nec quam vestibulum consequat. Curabitur a est tempor, egestas lectus a, imperdiet felis. Nulla sed ullamcorper erat.</p>
       <p> Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Quisque tincidunt semper blandit. Pellentesque rhoncus mi non risus aliquet, quis tristique risus mattis. Suspendisse id sapien quis odio facilisis venenatis. Curabitur dapibus hendrerit enim elementum malesuada. Morbi rhoncus libero sit amet mi tempus dictum.</p>
     </div>
-    <div class="section_break"></div>
+    <div class="section_break"></div> <!--TODO: either enable your very fancy inter-section scrolling restrictions, or (easier, more logical, less fancy) significantly reduce the size of these section breaks-->
     <div class="section_content">
       <h2 id="Ruby">Adventures in Ruby</h2>
       <p>Before applying to Founders and Coders, I was learning Ruby. Here are some of the things I worked on:</p>
