@@ -12,7 +12,7 @@
   z-index: 1; /* on top of other elements */
   top: 0; /* at the top of the page */
   left: 0; /* at the left of the page */
-  background-color: #111;
+  background-color: #000;
   overflow-x: hidden; /* no horizontal scrolling */
   padding-top: 130px; /* so they start below the title */
 }
@@ -46,8 +46,8 @@
 }
 
 .left_sidebar_static a:hover {
-  color: black;
-  background-color: white
+  color: #000;
+  background-color: #FFF;
 }
 
 
