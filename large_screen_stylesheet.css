@@ -72,6 +72,10 @@
   height: 100vh;
 }
 
+.section_content a {
+  overflow-wrap: break-word;
+}
+
 .project_title {
   margin-top: 70px;
 }
