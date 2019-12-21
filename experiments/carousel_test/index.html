@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" media="screen and (min-width: 800px)" href="./large_screen_stylesheet.css"/>
+  <link rel="stylesheet" media="screen and (max-width: 800px)" href="./mobile_stylesheet.css" />
+  <title>Image Carousel</title>
+</head>
+<body>
+  <h1 id="main_title">Hello World! Come on in...</h1>
+  <div class="dynamic_hamburger_button"> <!-- TODO: work out why this hamburger is pushing the main paragraph text down even when the hamburger is set to display: none; , fix this issue, and then move left and right static sidebars back up. Something to do with z-indexes?? -->
+    <a onclick="openSideMenu()">
+      <svg width="25" height="30"> <!--TODO: either master SVG path tags or work out a different way to make the hamburger. Either way, make a smaller, squarer, and prettier menu bar -->
+        <path d="M0,5 25,5" stroke="#000" stroke-width="5"/>
+        <path d="M0,14 25,14" stroke="#000" stroke-width="5"/>
+        <path d="M0,23 25,23" stroke="#000" stroke-width="5"/>
+      </svg>
+    </a>
+  </div>
+    <nav class="left_sidebar_dynamic" id="side-menu">
+    <div class="left_sidebar_dynamic_top">
+    <a href="#About_me" onclick="closeSideMenu()">About me</a>
+    <a href="#why_Im_applying" onclick="closeSideMenu()">Why I'm applying</a>
+    <a href="#Ruby" onclick="closeSideMenu()">Adventures in Ruby</a>
+    <a href="#notes" onclick="closeSideMenu()">Notes and writings</a>
+    </div>
+    <p></p><p></p><p></p> <!-- TODO: find something better than this, like sending the second set of links to the bottom. Is this the time when the fabled flex container is actually going to be useful?? -->
+    <div class="left_sidebar_dynamic_bottom">
+    <a href="https://github.com/ievans147" target="_blank">GitHub</a>
+    <a href="https://www.freecodecamp.org/fcc6941e898" target="_blank">FreeCodeCamp</a>
+    <a href="https://www.codewars.com/users/ievans147" target="_blank">Codewars</a>
+    <a href="mailto:ievans.storrie@gmail.com" target="blank">Email</a><br>(ievans.storrie@gmail.com)
+    </div>
+  </nav>
+  <nav class="left_sidebar_static">
+    <a href="#About_me">About me</a>
+    <a href="#why_Im_applying">Why I'm applying</a>
+    <a href="#Ruby">Adventures in Ruby</a>
+    <a href="#notes">Notes and writings</a>
+  </nav>
+  <div class ="contact_bar">
+    <h3 class="contact_header">Find me on:</h3>
+    <p><a href="https://github.com/ievans147" target="_blank">GitHub</a></p>
+    <p><a href="https://www.freecodecamp.org/fcc6941e898" target="_blank">FreeCodeCamp</a></p>
+    <p><a href="https://www.codewars.com/users/ievans147" target="_blank">Codewars</a></p>
+    <p><a href="mailto:ievans.storrie@gmail.com" target="blank">Email</a><br>(ievans.storrie@gmail.com)</p>
+  </div>
+  <div claa="main">
+    <!--Here goes image slider -->
+  </div>
+</body>
+</html>

@@ -1,0 +1,36 @@
+.left_sidebar_static {
+  display: none;
+}
+
+.dynamic_hamburger_button {
+  overflow: hidden;
+  height: 30px;
+  width: 25px;
+  position: fixed;
+}
+
+.left_sidebar_dynamic {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #000;
+  overflow-x: hidden;
+  padding-top: 60px; /*consider removing for mobiles*/
+  transition: 0.3s;
+  display: flex;
+  flex-direction: column;
+}
+
+.left_sidebar_dynamic a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  color: #FFF;
+  display: block;
+}
+
+.contact_bar {
+  display: none;
+}

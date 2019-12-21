@@ -6,11 +6,6 @@
 }
 
 
-/* right sidebar: flex row with wrap. Font smaller.
-left sidebar: invisible for this commit. You could even comment it out in the html
-central area: no margins or anything
-*/
-
 .left_sidebar_static {
   display: none;
 }
@@ -72,7 +67,7 @@ central area: no margins or anything
 }
 
 .section_content {
-  margin-left: 40px;
+  margin-left: 40px; /*Maybe this is the offender for your ul not being as far left as you'd like*/
 }
 
 .section_content a {

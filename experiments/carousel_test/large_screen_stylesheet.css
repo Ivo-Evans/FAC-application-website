@@ -1,0 +1,55 @@
+.left_sidebar_static {
+  width: 250px;
+  height: 100%;
+  position: fixed; /* will stay in place when I scroll */
+  z-index: 1; /* on top of other elements */
+  top: 0; /* at the top of the page */
+  left: 0; /* at the left of the page */
+  background-color: #000;
+  overflow-x: hidden; /* no horizontal scrolling */
+  padding-top: 130px; /* so they start below the title */
+}
+
+.contact_bar{
+  height: 100%;
+  width: 250px;
+  position: fixed; /* will stay in place when I scroll */
+  z-index: 1; /* on top of other elements */
+  top: 0; /* at the top of the page */
+  right: 0; /* at the right of the page */
+  background-color: #FFF;
+  overflow-x: hidden; /* no horizontal scrolling */
+  padding-top: 110px; /* so they start below the title */
+} /* You could put common elements of these sidebars into a variable. The question is, how are you going to scale this structure to mobile devices?*/
+
+.left_sidebar_dynamic {
+  display: none;
+}
+
+.dynamic_handburger_button {
+  display: none;
+}
+
+.left_sidebar_static a {
+  padding: 6px 8px 6px 16px;
+  margin: 0;
+  text-decoration: none;
+  color: #FFF;
+  display: block;
+}
+
+.left_sidebar_static a:hover {
+  color: #000;
+  background-color: #FFF;
+}
+
+.main {
+  margin-left: 250px; /* this needs to be same as sidebar width. Would it be clever to use a variable here? */
+  margin-right: 250px; /* ibid */
+  padding: 0px 50px;
+}
+
+#main_title {
+  margin-left: 300px; /* sidebar width + .main padding */
+  margin-right: 250px;
+}
