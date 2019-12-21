@@ -1,3 +1,7 @@
+.images {
+  border: 5px solid black;
+}
+
 .images ul {
   display: flex;
   list-style-type: none;
