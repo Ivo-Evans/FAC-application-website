@@ -1,11 +1,18 @@
 let imageStrip = document.body.querySelector(".images");
 let images = document.body.querySelectorAll(".images img")
+let finalImagePosition = Array.from(images).reduce((a, b) => a + b.offsetWidth, 0) - images[images.length - 1].offsetWidth;
+
 let rightButton = document.getElementById("rButton");
 let leftButton = document.getElementById("lButton");
+
 let currentImage = 0;
 let position = 0;
-let picturePositions = [0, ]
 
+rightButton.addEventListener('click', () => {moveRight(imageStrip)});
+leftButton.addEventListener('click', () => {moveLeft(imageStrip)});
+
+
+/*
 padNarrowImages(images) // unsuccessful, but changing .images img in the CSS IS successful, so i think the problem is with my interaction with the DOM.
 
 function padNarrowImages(list) {
@@ -19,11 +26,20 @@ function padNarrowImages(list) {
     }
   }
 }
+*/
 
 function moveLeft(element) {
   position += images[currentImage].offsetWidth;
   element.style.transform = "translateX(" + position + "px)";
   currentImage -= 1; // decrementing syntax caused hoisting problems
+
+  if (currentImage < 0) {
+    currentImage = images.length - 1;
+    console.log("prechange position: " + position);
+    position = -(finalImagePosition);
+    // moveRight(element);
+    element.style.transform = "translateX(" + position + "px)";
+  }
 }
 
 function moveRight(element) {
@@ -31,15 +47,13 @@ function moveRight(element) {
   element.style.transform = "translateX(" + position + "px)";
   currentImage += 1; // decrementing syntax caused hoisting problems
 
-  if (picturePositions.length < images.length) {picturePositions.push(position)}
-  console.log(picturePositions); // not a tenable strategy for leftward movement. In fact, a single leftward move would break it - length would increase but there would be duplicate values. Better just to pad all images, then find the absolute distance you need to go.  
 
   if (currentImage > images.length - 1) {
-    currentImage = 1;
-    position = picturePositions[0];
+    console.log(currentImage + position)
+    currentImage = 0;
+    position = 0;
     element.style.transform = "translateX(" + position + ")";
   }
-//  console.log("position: " + position + " currentImage: " + currentImage);
 }
 
 /*
@@ -50,6 +64,3 @@ moveLeft should:
   - move imageStrip Right
   - it should increase the position, which is distance from the left margin
 */
-
-rightButton.addEventListener('click', () => {moveRight(imageStrip)});
-leftButton.addEventListener('click', () => {moveLeft(imageStrip)});
