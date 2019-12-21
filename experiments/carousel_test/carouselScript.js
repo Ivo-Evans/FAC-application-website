@@ -9,5 +9,3 @@ function move(element, distance, leftOrRight) {
 
 rightButton.addEventListener('click', () => {move(imageStrip, 500, "+")});
 leftButton.addEventListener('click', () => {move(imageStrip, 500, "-")});
-
-move(imageStrip, 500, "-");
