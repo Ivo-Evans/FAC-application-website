@@ -69,7 +69,11 @@
       strip.style.transform = "translateX(-500px)";
     }
 
-    moveLeft(imageStrip);
+    function move(element, distance, leftOrRight) {
+      element.style.transform = "translateX(" + leftOrRight + distance + "px)";
+    }
+
+    move(imageStrip, 500, "-");
   </script>
 </body>
 </html>
