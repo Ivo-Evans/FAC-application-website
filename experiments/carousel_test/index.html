@@ -60,14 +60,11 @@
       <li><img src="./image-carousel-images/7.jpg" alt=""></li>
       </ul>
     </div>
-    <!--Here goes image slider -->
+    <p id="rButton"> press this sentence to move right </p>
   </div>
   <script>
     let imageStrip = document.body.querySelector(".images");
-
-    function moveLeft(strip) {
-      strip.style.transform = "translateX(-500px)";
-    }
+    let inchoateButton = document.getElementById("rBody");
 
     function move(element, distance, leftOrRight) {
       element.style.transform = "translateX(" + leftOrRight + distance + "px)";
