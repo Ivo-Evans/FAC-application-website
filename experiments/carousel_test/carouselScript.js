@@ -19,12 +19,8 @@ function padNarrowImages() {
     thisWidth = images[i].offsetWidth
     if (thisWidth < widest_image) { // actually does get triggered for 4/6 images
       let extra = (widest_image - thisWidth) / 2;
-      console.log("in conditional")
-      console.log(images[i].style.paddingLeft)
       images[i].style.paddingLeft = extra + "px"; // the problem must be here
-      console.log(images[i].style.paddingLeft)
       images[i].style.paddingRight = extra + "px";
-      document.body.style.backgroundColor = "pink";
     }
   }
 }
