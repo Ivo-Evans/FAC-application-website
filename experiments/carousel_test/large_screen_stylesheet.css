@@ -5,6 +5,7 @@
 .images ul {
   display: flex;
   list-style-type: none;
+  left-padding: 500px;
 }
 
 .images li {
@@ -15,7 +16,12 @@
 
 .images img {
   max-height: 100%; /* 100% *of* li height */
+  /* padding-left: 50px; */
 }
+
+
+/* End of new things */
+
 
 
 .left_sidebar_static {
