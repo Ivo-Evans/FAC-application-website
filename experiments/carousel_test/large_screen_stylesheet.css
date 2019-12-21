@@ -1,3 +1,18 @@
+.images ul {
+  display: flex;
+  list-style-type: none;
+}
+
+.images li {
+  height: 50vh;
+  flex-grow: 1;
+  object-fit: cover;
+}
+
+.images img {
+  max-height: 100%; /* 100% *of* li height */
+}
+
 .left_sidebar_static {
   width: 250px;
   height: 100%;
