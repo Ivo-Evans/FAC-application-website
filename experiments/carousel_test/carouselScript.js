@@ -9,12 +9,14 @@ function moveLeft(element) {
   position -= images[currentImage].offsetWidth;
   element.style.transform = "translateX(+" + position + "px)";
   currentImage -= 1; // decrementing syntax caused hoisting problems
+  console.log("position: " + position + " currentImage: " + currentImage);
 }
 
 function moveRight(element) {
   position += images[currentImage].offsetWidth;
   element.style.transform = "translateX(-" + position + "px)";
   currentImage += 1; // decrementing syntax caused hoisting problems
+  console.log("position: " + position + " currentImage: " + currentImage);
 }
 
 
