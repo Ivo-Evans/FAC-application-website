@@ -6,11 +6,10 @@ let rightButton = document.getElementById("rButton");
 let leftButton = document.getElementById("lButton");
 
 let currentImage = 0;
-let position = 0;
+let cuurentPosition = 0;
 
 rightButton.addEventListener('click', () => {moveRight(imageStrip)});
 leftButton.addEventListener('click', () => {moveLeft(imageStrip)});
-
 
 /*
 padNarrowImages(images) // unsuccessful, but changing .images img in the CSS IS successful, so i think the problem is with my interaction with the DOM.
@@ -29,30 +28,28 @@ function padNarrowImages(list) {
 */
 
 function moveLeft(element) {
-  position += images[currentImage].offsetWidth;
-  element.style.transform = "translateX(" + position + "px)";
+  currentPosition += images[currentImage].offsetWidth;
+  element.style.transform = "translateX(" + currentPosition + "px)";
   currentImage -= 1; // decrementing syntax caused hoisting problems
 
   if (currentImage < 0) {
     currentImage = images.length - 1;
-    console.log("prechange position: " + position);
-    position = -(finalImagePosition);
-    // moveRight(element);
-    element.style.transform = "translateX(" + position + "px)";
+    currentPosition = -(finalImagePosition);
+    element.style.transform = "translateX(" +currentPosition + "px)";
   }
 }
 
 function moveRight(element) {
-  position -= images[currentImage].offsetWidth;
-  element.style.transform = "translateX(" + position + "px)";
+ currentPosition -= images[currentImage].offsetWidth;
+  element.style.transform = "translateX(" +currentPosition + "px)";
   currentImage += 1; // decrementing syntax caused hoisting problems
 
 
   if (currentImage > images.length - 1) {
-    console.log(currentImage + position)
+    console.log(currentImage +currentPosition)
     currentImage = 0;
-    position = 0;
-    element.style.transform = "translateX(" + position + ")";
+    currentPosition = 0;
+    element.style.transform = "translateX(" +currentPosition + ")";
   }
 }
 
@@ -62,5 +59,5 @@ moveLeft should:
   - bring on the image to the left
   - it should decrease the index by 1
   - move imageStrip Right
-  - it should increase the position, which is distance from the left margin
+  - it should increase thecurrentPosition, which is distance from the left margin
 */
