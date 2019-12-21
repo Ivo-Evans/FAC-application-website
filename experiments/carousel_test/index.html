@@ -62,15 +62,6 @@
     </div>
     <p id="rButton"> press this sentence to move right </p>
   </div>
-  <script>
-    let imageStrip = document.body.querySelector(".images");
-    let inchoateButton = document.getElementById("rBody");
-
-    function move(element, distance, leftOrRight) {
-      element.style.transform = "translateX(" + leftOrRight + distance + "px)";
-    }
-
-    move(imageStrip, 500, "-");
-  </script>
+  <script src="carouselScript.js"></script>
 </body>
 </html>
