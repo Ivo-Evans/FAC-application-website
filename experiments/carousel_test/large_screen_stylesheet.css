@@ -4,7 +4,6 @@
 }
 
 .images {
-  /* border: 5px solid black; */
   padding: 0;
 }
 
@@ -22,10 +21,7 @@
 }
 
 .images img {
-  max-height: 100%; /* 100% *of* li height */
-  /* border: 5px solid green; */
-  /* padding-left: 100px;
-  padding-right: 100px; */
+  max-height: 100%;
 }
 
 
@@ -36,26 +32,26 @@
 .left_sidebar_static {
   width: 250px;
   height: 100%;
-  position: fixed; /* will stay in place when I scroll */
-  z-index: 1; /* on top of other elements */
-  top: 0; /* at the top of the page */
-  left: 0; /* at the left of the page */
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
   background-color: #000;
-  overflow-x: hidden; /* no horizontal scrolling */
-  padding-top: 130px; /* so they start below the title */
+  overflow-x: hidden;
+  padding-top: 130px;
 }
 
 .contact_bar{
   height: 100%;
   width: 250px;
-  position: fixed; /* will stay in place when I scroll */
-  z-index: 1; /* on top of other elements */
-  top: 0; /* at the top of the page */
-  right: 0; /* at the right of the page */
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  right: 0;
   background-color: #FFF;
-  overflow-x: hidden; /* no horizontal scrolling */
-  padding-top: 110px; /* so they start below the title */
-} /* You could put common elements of these sidebars into a variable. The question is, how are you going to scale this structure to mobile devices?*/
+  overflow-x: hidden;
+  padding-top: 110px;
+} 
 
 .left_sidebar_dynamic {
   display: none;
