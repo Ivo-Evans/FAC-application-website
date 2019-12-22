@@ -1,14 +1,19 @@
-.images ul {
-  display: flex;
-  justify-content: space-around;
-  list-style-type: none;
-}
-
 .slider_box {
   border: 5px solid red;
    /* overflow: hidden; */
 }
 
+.images {
+  padding: 0;
+}
+
+.images ul {
+  display: flex;
+  justify-content: space-around;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
 
 .images li {
   height: 50vh;
@@ -20,6 +25,9 @@
   max-height: 100%; /* 100% *of* li height */
 }
 
+button {
+  font-size: 70px;
+}
 
 
 /* old stuff */

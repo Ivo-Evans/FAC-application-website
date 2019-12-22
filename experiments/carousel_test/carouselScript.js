@@ -8,27 +8,17 @@ let currentPosition = 0;
 
 /* You might seriously consider not padding anything here but adding small padding in CSS and adding a kind of scroll effect. You could add duplicates pictures on the outside that you never navigate to; or a set of three that, when you navigate to them, teleport you to the beginning without you realising it. Your pictures could even be connected. */
 
-// padNarrowImages();
 padAllImages()
+// window.addEventListener('resize', () => {padAarrowImages()});
+
 rightButton.addEventListener('click', () => {moveRight(imageStrip)});
 leftButton.addEventListener('click', () => {moveLeft(imageStrip)});
 
 let boxWidth = document.body.querySelector(".slider_box");
 
-// function padNarrowImages() {
-//   let widest_image = Array.from(images).map(e => e.offsetWidth).sort((a, b) =>  b - a)[0];
-//   for(let i = 0; i < images.length; i++) {
-//     thisWidth = images[i].offsetWidth;
-//     if (thisWidth < widest_image) {
-//       let extra = (widest_image - thisWidth) / 2;
-//       images[i].style.paddingLeft = extra + "px";
-//       images[i].style.paddingRight = extra + "px";
-//     }
-//   }
-// }
 
 function padAllImages() {
-  let divWidth = document.body.querySelector(".slider_box").offsetWidth;
+  let divWidth =  document.body.querySelector(".slider_box").offsetWidth;
   for(let i = 0; i < images.length; i++) {
     let thisWidth = images[i].offsetWidth;
     images[i].style.paddingLeft = ((divWidth - thisWidth) / 2) + "px";
@@ -75,3 +65,16 @@ moveLeft should:
   - move imageStrip Right
   - it should increase thecurrentPosition, which is distance from the left margin
 */
+
+
+// function padNarrowImages() {
+//   let widest_image = Array.from(images).map(e => e.offsetWidth).sort((a, b) =>  b - a)[0];
+//   for(let i = 0; i < images.length; i++) {
+//     thisWidth = images[i].offsetWidth;
+//     if (thisWidth < widest_image) {
+//       let extra = (widest_image - thisWidth) / 2;
+//       images[i].style.paddingLeft = extra + "px";
+//       images[i].style.paddingRight = extra + "px";
+//     }
+//   }
+// }
