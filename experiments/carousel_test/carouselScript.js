@@ -58,6 +58,7 @@ function moveRight(element) {
 
 
   if (currentImage > images.length - 1) {
+    element.style.transition = "none";
     console.log(currentImage +currentPosition)
     currentImage = 0;
     currentPosition = 0;
