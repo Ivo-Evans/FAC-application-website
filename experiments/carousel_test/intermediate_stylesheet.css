@@ -1,0 +1,78 @@
+.slider_box {
+  border: 5px solid red;
+   /* overflow: hidden; */
+}
+
+.images {
+  /* border: 5px solid black; */
+  padding: 0;
+}
+
+.images ul {
+  display: flex;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.images li {
+  height: 50vh;
+  flex-grow: 1;
+  object-fit: cover;
+}
+
+.images img {
+  max-height: 100%; /* 100% *of* li height */
+  /* border: 5px solid green; */
+  /* padding-left: 100px;
+  padding-right: 100px; */
+}
+
+
+/* End of new things */
+
+
+
+.left_sidebar_static {
+  display: none;
+}
+
+.contact_bar{
+  display: none;
+} /* You could put common elements of these sidebars into a variable. The question is, how are you going to scale this structure to mobile devices?*/
+
+.left_sidebar_dynamic {
+  display: none;
+}
+
+.dynamic_handburger_button {
+  display: none;
+}
+
+.hamburger {
+  display: none;
+}
+
+.left_sidebar_static a {
+  padding: 6px 8px 6px 16px;
+  margin: 0;
+  text-decoration: none;
+  color: #FFF;
+  display: block;
+}
+
+.left_sidebar_static a:hover {
+  color: #000;
+  background-color: #FFF;
+}
+
+.main {
+  margin-left: 250px; /* this needs to be same as sidebar width. Would it be clever to use a variable here? */
+  margin-right: 250px; /* ibid */
+  padding: 0px 50px;
+}
+
+#main_title {
+  margin-left: 300px; /* sidebar width + .main padding */
+  margin-right: 250px;
+}
