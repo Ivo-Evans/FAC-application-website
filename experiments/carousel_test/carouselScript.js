@@ -7,8 +7,10 @@ const leftButton = document.getElementById("lButton");
 let currentImage = 0;
 let currentPosition = 0;
 
+/* You might seriously consider not padding anything here but adding small padding in CSS and adding a kind of scroll effect. You could add duplicates pictures on the outside that you never navigate to; or a set of three that, when you navigate to them, teleport you to the beginning without you realising it. Your pictures could even be connected. */
+
 // padNarrowImages();
-padAllImages()
+// padAllImages()
 rightButton.addEventListener('click', () => {moveRight(imageStrip)});
 leftButton.addEventListener('click', () => {moveLeft(imageStrip)});
 
@@ -36,6 +38,7 @@ function padAllImages() {
 }
 
 function moveLeft(element) {
+  element.style.transition = "transform 0.5s ease-in-out";
   currentPosition += images[currentImage].offsetWidth;
   element.style.transform = "translateX(" + currentPosition + "px)";
   currentImage -= 1; // decrementing syntax caused hoisting problems
@@ -48,6 +51,7 @@ function moveLeft(element) {
 }
 
 function moveRight(element) {
+  element.style.transition = "transform 0.5s ease-in-out";
   currentPosition -= images[currentImage].offsetWidth;
   element.style.transform = "translateX(" +currentPosition + "px)";
   currentImage += 1; // decrementing syntax caused hoisting problems
