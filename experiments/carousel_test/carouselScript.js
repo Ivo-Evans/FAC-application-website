@@ -1,27 +1,37 @@
 const imageStrip = document.body.querySelector(".images");
 const images = document.body.querySelectorAll(".images img")
-const finalImagePosition = Array.from(images).reduce((a, b) => a + b.offsetWidth, 0) - images[images.length - 1].offsetWidth;
+const finalImagePosition = Array.from(images).reduce((a, b) => a + b.offsetWidth, 0) - images[images.length - 1].offsetWidth; // this is not a very good system. Maybe I should add some kind of lookup system, where it finds the current position of the final image on-the-fly.
 const rightButton = document.getElementById("rButton");
 const leftButton = document.getElementById("lButton");
 
 let currentImage = 0;
 let currentPosition = 0;
 
-padNarrowImages();
+// padNarrowImages();
+padAllImages()
 rightButton.addEventListener('click', () => {moveRight(imageStrip)});
 leftButton.addEventListener('click', () => {moveLeft(imageStrip)});
 
 let boxWidth = document.body.querySelector(".slider_box");
 
-function padNarrowImages() {
-  let widest_image = Array.from(images).map(e => e.offsetWidth).sort((a, b) =>  b - a)[0];
+// function padNarrowImages() {
+//   let widest_image = Array.from(images).map(e => e.offsetWidth).sort((a, b) =>  b - a)[0];
+//   for(let i = 0; i < images.length; i++) {
+//     thisWidth = images[i].offsetWidth;
+//     if (thisWidth < widest_image) {
+//       let extra = (widest_image - thisWidth) / 2;
+//       images[i].style.paddingLeft = extra + "px";
+//       images[i].style.paddingRight = extra + "px";
+//     }
+//   }
+// }
+
+function padAllImages() {
+  let divWidth = document.body.querySelector(".slider_box").offsetWidth;
   for(let i = 0; i < images.length; i++) {
-    thisWidth = images[i].offsetWidth;
-    if (thisWidth < widest_image) {
-      let extra = (widest_image - thisWidth) / 2;
-      images[i].style.paddingLeft = extra + "px";
-      images[i].style.paddingRight = extra + "px";
-    }
+    let thisWidth = images[i].offsetWidth;
+    images[i].style.paddingLeft = ((divWidth - thisWidth) / 2) + "px";
+    images[i].style.paddingRight = ((divWidth - thisWidth) / 2) + "px";
   }
 }
 
