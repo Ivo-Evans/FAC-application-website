@@ -4,6 +4,12 @@
   list-style-type: none;
 }
 
+.slider_box {
+  border: 5px solid red;
+   /* overflow: hidden; */
+}
+
+
 .images li {
   height: 50vh;
   flex-grow: 1;
@@ -15,6 +21,8 @@
 }
 
 
+
+/* old stuff */
 
 .left_sidebar_static {
   display: none;
