@@ -1,6 +1,5 @@
 const imageStrip = document.body.querySelector(".images");
 const images = document.body.querySelectorAll(".images img")
-const finalImagePosition = Array.from(images).reduce((a, b) => a + b.offsetWidth, 0)/* - images[images.length - 1].offsetWidth*/; // this is not a very good system. Maybe I should add some kind of lookup system, where it finds the current position of the final image on-the-fly.
 const rightButton = document.getElementById("rButton");
 const leftButton = document.getElementById("lButton");
 
@@ -44,6 +43,7 @@ function moveLeft(element) {
   currentImage -= 1; // decrementing syntax caused hoisting problems
 
   if (currentImage < 0) {
+    let finalImagePosition = Array.from(images).reduce((a, b) => a + b.offsetWidth, 0) - images[images.length - 1].offsetWidth; // this is not a very good system. Maybe I should add some kind of lookup system, where it finds the current position of the final image on-the-fly.
     currentImage = images.length - 1;
     currentPosition = -(finalImagePosition);
     element.style.transform = "translateX(" +currentPosition + "px)";
