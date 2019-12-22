@@ -43,7 +43,8 @@ function moveLeft(element) {
   currentImage -= 1; // decrementing syntax caused hoisting problems
 
   if (currentImage < 0) {
-    let finalImagePosition = Array.from(images).reduce((a, b) => a + b.offsetWidth, 0) - images[images.length - 1].offsetWidth; // this is not a very good system. Maybe I should add some kind of lookup system, where it finds the current position of the final image on-the-fly.
+    let finalImagePosition = Array.from(images).reduce((a, b) => a + b.offsetWidth, 0) - images[images.length - 1].offsetWidth;
+    element.style.transition = "none";
     currentImage = images.length - 1;
     currentPosition = -(finalImagePosition);
     element.style.transform = "translateX(" +currentPosition + "px)";
