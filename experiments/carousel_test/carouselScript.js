@@ -1,6 +1,6 @@
 const imageStrip = document.body.querySelector(".images");
 const images = document.body.querySelectorAll(".images img")
-const finalImagePosition = Array.from(images).reduce((a, b) => a + b.offsetWidth, 0) - images[images.length - 1].offsetWidth; // this is not a very good system. Maybe I should add some kind of lookup system, where it finds the current position of the final image on-the-fly.
+const finalImagePosition = Array.from(images).reduce((a, b) => a + b.offsetWidth, 0)/* - images[images.length - 1].offsetWidth*/; // this is not a very good system. Maybe I should add some kind of lookup system, where it finds the current position of the final image on-the-fly.
 const rightButton = document.getElementById("rButton");
 const leftButton = document.getElementById("lButton");
 
