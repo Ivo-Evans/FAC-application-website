@@ -10,7 +10,7 @@ padAllImages()
 rightButton.addEventListener('click', () => {moveRight(imageStrip)});
 leftButton.addEventListener('click', () => {moveLeft(imageStrip)});
 
-let boxWidth = document.body.querySelector(".slider_box");
+// let boxWidth = document.body.querySelector(".slider_box");
 
 
 function padAllImages() {
