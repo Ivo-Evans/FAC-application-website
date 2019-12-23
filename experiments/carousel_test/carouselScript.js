@@ -1,5 +1,6 @@
 // TODO: add wrap images. Sort out indexes within this
 // TODO: add dots-nav system. Dots are indexed, and there are the same number of dots as distinct images. Event listener for dots container finds index of dot clicked, compares it to currentImage to find jumpDistanceLeft and jumpDistanceRight. If jumpDistanceLeft > jumpDistanceRight, call moveRight jumpDistanceRight times and then return; else, call moveLeft jumpDistanceLeft times and then return. If this strategy causes display issues from too many transitions, you could write a teleport function that calculates the position of the picture at each index, assigns these positions to an indexed list, and then takes the index of the dot, feeds it into the on-the-fly generated index list of positions, and gives this value to a transform property.
+// TODO: add new time if the user clicks left or right: if playing, play = yada yada same again. 
 // TODO: sort out planning for medium-sized screens.
 
 const imageStrip = document.body.querySelector(".images");
@@ -19,6 +20,7 @@ window.addEventListener('resize', adaptiveImagePadding); // n.b lack of parenthe
 let play = setInterval(() => moveRight(imageStrip), 3000);
 let playing = true
 playPauseButton.addEventListener('click', playPause);
+
 function playPause() {
   if (playing) {
     clearInterval(play);
