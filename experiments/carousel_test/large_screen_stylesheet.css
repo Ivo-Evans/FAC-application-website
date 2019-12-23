@@ -1,6 +1,6 @@
 .slider_box {
-  border: 5px solid red;
-   /* overflow: hidden; */
+  /* border: 5px solid red; */
+   overflow: hidden;
 }
 
 .images {
