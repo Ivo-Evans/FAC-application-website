@@ -1,25 +1,27 @@
 // TODO: add wrap images. Sort out indexes within this
 // TODO: add dots-nav system. Dots are indexed, and there are the same number of dots as distinct images. Event listener for dots container finds index of dot clicked, compares it to currentImage to find jumpDistanceLeft and jumpDistanceRight. If jumpDistanceLeft > jumpDistanceRight, call moveRight jumpDistanceRight times and then return; else, call moveLeft jumpDistanceLeft times and then return. If this strategy causes display issues from too many transitions, you could write a teleport function that calculates the position of the picture at each index, assigns these positions to an indexed list, and then takes the index of the dot, feeds it into the on-the-fly generated index list of positions, and gives this value to a transform property.
-// TODO: add new time if the user clicks left or right: if playing, play = yada yada same again. 
+// TODO: add new time if the user clicks left or right: if playing, clearInterval(play) and then play = setInterval(() => moveRight(imageStrip), 3000).
 // TODO: sort out planning for medium-sized screens.
 
 const imageStrip = document.body.querySelector(".images");
 const images = document.body.querySelectorAll(".images img")
+
 const rightButton = document.getElementById("rButton");
 const leftButton = document.getElementById("lButton");
 const playPauseButton = document.getElementById("playPause");
+
 let currentImage = 0;
 let currentPosition = 0;
 
-rightButton.addEventListener('click', () => {moveRight(imageStrip)});
-leftButton.addEventListener('click', () => {moveLeft(imageStrip)});
-
-adaptiveImagePadding(); // not adaptive when called here. This sets initial padding. Further calls from resize
-window.addEventListener('resize', adaptiveImagePadding); // n.b lack of parentheses - we include the function but we don't call it.
-
+adaptiveImagePadding(); // not adaptive here, this sets initial padding. later called by listener
 let play = setInterval(() => moveRight(imageStrip), 3000);
 let playing = true
+
 playPauseButton.addEventListener('click', playPause);
+rightButton.addEventListener('click', () => {moveRight(imageStrip)});
+leftButton.addEventListener('click', () => {moveLeft(imageStrip)})
+window.addEventListener('resize', adaptiveImagePadding); // n.b lack of parentheses - we include the function but we don't call it.
+
 
 function playPause() {
   if (playing) {
