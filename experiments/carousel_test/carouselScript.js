@@ -8,11 +8,9 @@ let currentPosition = 0;
 
 rightButton.addEventListener('click', () => {moveRight(imageStrip)});
 leftButton.addEventListener('click', () => {moveLeft(imageStrip)});
-adaptiveImagePadding();
+adaptiveImagePadding(); // not adaptive when called here. This sets initial padding. Further calls from body tag adapt.
 
 function adaptiveImagePadding() {
-  console.log("Resize" + window.innerWidth);
-  console.log(window.innerWidth > 800 ? "whoah big screen" : "little screen");
   let divWidth =  document.body.querySelector(".slider_box").offsetWidth;
 
   if (window.innerWidth <= 800) {
