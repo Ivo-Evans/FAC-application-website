@@ -5,20 +5,26 @@ const leftButton = document.getElementById("lButton");
 let currentImage = 0;
 let currentPosition = 0;
 
-padAllImages()
 
 rightButton.addEventListener('click', () => {moveRight(imageStrip)});
 leftButton.addEventListener('click', () => {moveLeft(imageStrip)});
+adaptiveImagePadding();
 
-// let boxWidth = document.body.querySelector(".slider_box");
-
-
-function padAllImages() {
+function adaptiveImagePadding() {
+  console.log("Resize" + window.innerWidth);
+  console.log(window.innerWidth > 800 ? "whoah big screen" : "little screen");
   let divWidth =  document.body.querySelector(".slider_box").offsetWidth;
-  for(let i = 0; i < images.length; i++) {
-    let thisWidth = images[i].offsetWidth;
-    images[i].style.paddingLeft = ((divWidth - thisWidth) / 2) + "px";
-    images[i].style.paddingRight = ((divWidth - thisWidth) / 2) + "px";
+
+  if (window.innerWidth <= 800) {
+    for(let i = 0; i < images.length; i++) {
+      images[i].style.paddingLeft = "0px";
+    }
+  } else if (window.innerWidth > 800 ) {
+    for(let i = 0; i < images.length; i++) {
+      let thisWidth = images[i].offsetWidth;
+      images[i].style.paddingLeft = ((divWidth - thisWidth) / 2) + "px";
+      images[i].style.paddingRight = ((divWidth - thisWidth) / 2) + "px";  
+    }
   }
 }
 
@@ -74,3 +80,14 @@ moveLeft should:
 //     }
 //   }
 // }
+
+
+// function padAllImages() {
+  //   let divWidth =  document.body.querySelector(".slider_box").offsetWidth;
+  //   for(let i = 0; i < images.length; i++) {
+  //     let thisWidth = images[i].offsetWidth;
+  //     images[i].style.paddingLeft = ((divWidth - thisWidth) / 2) + "px";
+  //     images[i].style.paddingRight = ((divWidth - thisWidth) / 2) + "px";
+  //   }
+  // }
+  
