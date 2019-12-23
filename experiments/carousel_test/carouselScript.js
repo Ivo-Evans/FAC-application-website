@@ -1,10 +1,14 @@
+// TODO: add wrap images. Sort out indexes within this
+// TODO: add timeout function that calls moveRight
+// TODO: add dots-nav system. Dots are indexed, and there are the same number of dots as distinct images. Event listener for dots container finds index of dot clicked, compares it to currentImage to find jumpDistanceLeft and jumpDistanceRight. If jumpDistanceLeft > jumpDistanceRight, call moveRight jumpDistanceRight times and then return; else, call moveLeft jumpDistanceLeft times and then return. If this strategy causes display issues from too many transitions, you could write a teleport function that calculates the position of the picture at each index, assigns these positions to an indexed list, and then takes the index of the dot, feeds it into the on-the-fly generated index list of positions, and gives this value to a transform property.
+// TODO: sort out planning for medium-sized screens.
+
 const imageStrip = document.body.querySelector(".images");
 const images = document.body.querySelectorAll(".images img")
 const rightButton = document.getElementById("rButton");
 const leftButton = document.getElementById("lButton");
 let currentImage = 0;
 let currentPosition = 0;
-
 
 rightButton.addEventListener('click', () => {moveRight(imageStrip)});
 leftButton.addEventListener('click', () => {moveLeft(imageStrip)});
@@ -21,7 +25,7 @@ function adaptiveImagePadding() {
     for(let i = 0; i < images.length; i++) {
       let thisWidth = images[i].offsetWidth;
       images[i].style.paddingLeft = ((divWidth - thisWidth) / 2) + "px";
-      images[i].style.paddingRight = ((divWidth - thisWidth) / 2) + "px";  
+      images[i].style.paddingRight = ((divWidth - thisWidth) / 2) + "px";
     }
   }
 }
@@ -88,4 +92,3 @@ moveLeft should:
   //     images[i].style.paddingRight = ((divWidth - thisWidth) / 2) + "px";
   //   }
   // }
-  
