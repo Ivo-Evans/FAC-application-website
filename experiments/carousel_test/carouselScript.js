@@ -10,8 +10,8 @@ const rightButton = document.getElementById("rButton");
 const leftButton = document.getElementById("lButton");
 const playPauseButton = document.getElementById("playPause");
 
-let currentImage = 0;
-let currentPosition = 0;
+let currentImage = 0; // index
+let currentPosition = 0; // pixels
 
 adaptiveImagePadding(); // not adaptive here, this sets initial padding. later called by listener
 let play = setInterval(() => moveRight(imageStrip), 3000);
@@ -24,11 +24,7 @@ window.addEventListener('resize', adaptiveImagePadding); // n.b lack of parenthe
 
 
 function playPause() {
-  if (playing) {
-    clearInterval(play);
-  } else {
-    play = setInterval(() => moveRight(imageStrip), 3000);
-  }
+  playing ? clearInterval(play) : play = setInterval(() => moveRight(imageStrip), 3000) ;
   playing = !playing;
 }
 
@@ -68,6 +64,8 @@ function moveRight(element) {
   currentPosition -= images[currentImage].offsetWidth;
   element.style.transform = "translateX(" +currentPosition + "px)";
   currentImage += 1; // decrementing syntax caused hoisting problems
+  console.log("transition1");
+  console.log("current image: " + currentImage);
 
 
   if (currentImage > images.length - 1) {
@@ -76,8 +74,15 @@ function moveRight(element) {
     currentImage = 0;
     currentPosition = 0;
     element.style.transform = "translateX(" +currentPosition + ")";
+    console.log("transition2");
   }
+  //
+  // if (currentImage == 0) {
+  //
+  // }
 }
+
+
 
 /*
 IMAGES from left to right have indexes 0..6
