@@ -13,7 +13,9 @@ let currentPosition = 0;
 rightButton.addEventListener('click', () => {moveRight(imageStrip)});
 leftButton.addEventListener('click', () => {moveLeft(imageStrip)});
 adaptiveImagePadding(); // not adaptive when called here. This sets initial padding. Further calls from resize
-window.addEventListener('resize', adaptiveImagePadding); // n.b lack of parentheses - we include the function but we don't call it. 
+window.addEventListener('resize', adaptiveImagePadding); // n.b lack of parentheses - we include the function but we don't call it.
+setInterval(() => moveRight(imageStrip), 3000);
+// setInterval(() => alert('tick'), 2000);
 
 function adaptiveImagePadding() {
   let divWidth =  document.body.querySelector(".slider_box").offsetWidth;
