@@ -1,6 +1,7 @@
 .slider_box {
   /* border: 5px solid red; */
    overflow: hidden;
+   width: 100%;
 }
 
 .images {
@@ -51,7 +52,7 @@
   background-color: #FFF;
   overflow-x: hidden;
   padding-top: 110px;
-} 
+}
 
 .left_sidebar_dynamic {
   display: none;
