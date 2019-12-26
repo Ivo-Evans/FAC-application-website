@@ -50,6 +50,41 @@
     <p><a href="mailto:ievans.storrie@gmail.com" target="blank">Email</a><br>(ievans.storrie@gmail.com)</p>
   </div>
   <div class="main">
+    <div class="carousel_images">
+      <img src="./sameSizeImages/0.jpg" class="image visible_image" alt="">
+      <img src="./sameSizeImages/1.jpg" class="image hidden_image" alt="">
+      <img src="./sameSizeImages/2.jpg" class="image hidden_image" alt="">
+      <img src="./sameSizeImages/3.jpg" class="image hidden_image" alt="">
+      <img src="./sameSizeImages/4.jpg" class="image hidden_image" alt="">
+      <img src="./sameSizeImages/5.jpg" class="image hidden_image" alt="">
+      <img src="./sameSizeImages/6.jpg" class="image hidden_image" alt="">
+      <img src="./sameSizeImages/7.jpg" class="image hidden_image" alt="">
+      <div class="carousel_interface">
+        <div class="carousel_dots_set">
+          <ul>
+            <li><button id="0"></button></li>
+            <li><button id="1"></button></li>
+            <li><button id="2"></button></li>
+            <li><button id="3"></button></li>
+            <li><button id="4"></button></li>
+            <li><button id="5"></button></li>
+            <li><button id="6"></button></li>
+            <li><button id="7"></button></li>
+          </ul>
+        </div>
+        <div class="carousel_buttons">
+          <button id="leftButton">left</button>
+          <button id="playPause">play/pause</button>
+          <button id="rightButton">right</button>
+        </div>
+      </div>
+      <div class="mobile_bars">
+        <span class="leftRightIndicator"><p></p></span>
+        <span class="playPauseIndicator"><p></p></span>
+        <span class="leftRightIndicator"><p></p></span>
+      </div>
+      <p class="mobile_instructions">Tap anywhere above the black bars to go right or left, or in the remaining space to play/pause. Alternatively, swipe anywhere on the image to navigate.</p>
+    </div>
     <div  id="About_me" class="section_content">
       <img class = "selfie" src="me_above_tbilisi.jpg"/>  <!-- You should pick a more welcoming picture. You look cold -->
       <h2>About me</h2>
@@ -57,7 +92,7 @@
       <ul>
         <li>I'm 25 years old.</li>
         <li>I grew up in Dalston, and went to Stoke Newington School, down the road from Founders and Coders.</li>
-        <li>At university, I discovered rock climbing, and it <b>changed my life for the better</b>. I climb at the gym <a href="https://github.com/redwedge/plasticneuron.github.io" target="_blank">plasticneuron</a> used to work at, The Castle, about twice a week, although the two of us are not acquaintances.</li> <!--TODO: do underlining and emboldening in CSS? -->
+        <li>At university, I discovered rock climbing, and it <b>changed my life for the better</b>. I actually climb at the gym <a href="https://github.com/redwedge/plasticneuron.github.io" target="_blank">plasticneuron</a> used to work at, The Castle, about twice a week, although the two of us are not acquaintances.</li> <!--TODO: do underlining and emboldening in CSS? -->
         <li>When I was 21, I lived and studied in Istanbul for a year.</li>
         <li>I work at two music venues, <a title="Bush Hall" href="http://s3-eu-west-1.amazonaws.com/diy-magazine//diy/Artists/J/Julien-Baker/05-06-17-Bush-Hall/20170605213542-Julien-Baker-Ph-CFaruolo.jpg" target="_blank">this one</a> and <a title="Islington Assembly Hall" href="https://www.accesscard.org.uk/wp-content/uploads/2019/10/islingtonassemblyhall3.jpg", target="_blank">this one</a>, as a bartender. One of them recently offered me a promotion to manager, but I turned it down because I wanted to focus on coding (so let's hope this works out!)</li>
       </ul>
@@ -94,7 +129,7 @@
         <li>I know of at least one WhatsApp chat file for which the parser throws an error - although I suspect it of adulteration.</li>
         <li>It's currently very long (500+ lines). I think it's as DRY as I can make it, but I would like to separate out component parts into different files and modules</li>
       </ul>
-      <p>check out it's readme <a href="=" target="_blank">here</a> and a simplified description of its execution <a href="#" target="_blank">here</a>.</p> <!--TODO: write those two things -->
+      <p>check out its readme <a href="=" target="_blank">here</a> and a simplified description of its execution <a href="#" target="_blank">here</a>.</p> <!--TODO: write those two things -->
     </div>
     <div class="section_break"></div>
     <div  id="notes" class="section_content"> <!--TODO: add real links to this and to adventures in ruby -->
@@ -118,4 +153,5 @@
   </div>
   </div>
   <script src="./scripts.js"></script>
+  <script src="./carouselScript.js"></script>
 </body>

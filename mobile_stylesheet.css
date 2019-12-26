@@ -73,3 +73,40 @@
 .section_content a {
   overflow-wrap: break-word;
 }
+
+/* carousel stuff */
+
+.carousel_images {
+  max-width: 100%;
+}
+
+.visible_image {
+  display: block;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.hidden_image {
+  display: none;
+}
+
+.carousel_interface {
+  display: none;
+}
+
+.mobile_bars {
+  display: flex;
+  height: 5px;
+  min-width: 100%;
+  justify-content: space-between;
+}
+
+.leftRightIndicator {
+  background-color: #000;
+  flex-grow: 1;
+}
+
+.playPauseIndicator {
+  background-color: #FFF;
+  flex-grow: 2;
+}
