@@ -17,6 +17,10 @@
   position: fixed;
 }
 
+.dynamic_hamburger_button svg {
+  position: fixed;
+}
+
 .left_sidebar_dynamic {
   height: 100%;
   width: 0;
