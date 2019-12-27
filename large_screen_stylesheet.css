@@ -139,7 +139,7 @@ q {
 
 .carousel_dots_set button:hover {
   background-color: #242424;
-  opacity: 100%;
+  opacity: 1;
   transition: all 0.15s ease;
 }
 
@@ -162,12 +162,12 @@ q {
   width: 100%;
   font-size: 60px;
   color: #FFF;
-  /* opacity: 0.5; */
+  opacity: 0.5;
 }
 
 .carousel_buttons i:hover {
   color: #242424;
-  opacity: 0.5; /* increase in colour but not opacity. Research tells me that opacity can't be increased by a child, however, it can be overridden by changing the parent's class (*sigh*) in JavaScript, using the mouseover and mouseout events and applying two listeners to each button. so Six overall extra listeners - worth it? I'm not sure. */
+  opacity: 1; /* increase in colour but not opacity. Research tells me that opacity can't be increased by a child, however, it can be overridden by changing the parent's class (*sigh*) in JavaScript, using the mouseover and mouseout events and applying two listeners to each button. so Six overall extra listeners - worth it? I'm not sure. */
 }
 
 .carousel_interface {
