@@ -55,7 +55,7 @@
 }
 
 
-#main_title {
+header {
   margin-left: 300px; /* sidebar width + .main padding */
   margin-right: 250px;
 }
