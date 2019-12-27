@@ -54,10 +54,6 @@
   padding-left: 10px;
 }
 
-.section_break {
-  height: 20vh;
-}
-
 .project_title {
   margin-top: 70px;
 }
@@ -77,6 +73,7 @@ header {
 
 section {
   margin-left: 40px; /*Maybe this is the offender for your ul not being as far left as you'd like*/
+  margin-bottom: 20vh;
 }
 
 section a {

@@ -72,8 +72,8 @@ main {
   padding-left: 10px;
 }
 
-.section_break {
-  height: 20vh;
+section {
+  margin-bottom: 20vh;
 }
 
 section a {
