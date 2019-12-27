@@ -100,6 +100,19 @@ section a {
   display: none;
 }
 
+.captions {
+  display: block!important;
+  position: absolute;
+  min-width: 100%;
+  bottom: 0px;
+  background-color: #242424;
+  opacity: 0.7;
+  color: #FFF;
+  text-align: center;
+  padding: 2px 0;
+  margin: 0;
+  font-size: 12px;
+}
 .mobile_bars {
   display: flex;
   height: 5px;

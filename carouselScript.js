@@ -35,6 +35,7 @@ function dotNav(event) {
 }
 
 const indexedDots = dotSet.firstElementChild.children
+const captionBox = document.querySelector(".captions")
 
 function changeImage(to) {
   images[currentImage].classList.remove("visible_image");
@@ -46,6 +47,7 @@ function changeImage(to) {
   images[currentImage].classList.remove("hidden_image");
   images[currentImage].classList.add("visible_image");
   indexedDots[currentImage].firstElementChild.classList.add('current_dot');
+  captionBox.innerText = images[currentImage].alt;
 }
 
 let touchArea = document.querySelector(".carousel_images");
