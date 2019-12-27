@@ -139,8 +139,10 @@
   transition: all 0.15s ease;
 }
 
-.current_dot {
-  background-color: #242424!important;
+.carousel_dots_set .current_dot {
+  background-color: #242424;
+  opacity: 1;
+  transition: all 0.4s ease;
 }
 
 .carousel_buttons {
@@ -156,28 +158,12 @@
   width: 100%;
   font-size: 60px;
   color: #FFF;
-  opacity: 50%;
+  /* opacity: 0.5; */
 }
 
 .carousel_buttons i:hover {
   color: #242424;
-  opacity: 100%; /* increase in colour but not opacity */
-}
-
-#leftButton {
-
-}
-
-#rightButton {
-
-}
-
-#playButton {
-  /* make this display: none in the event handler */
-}
-
-#pauseButton {
-  /* change style from display: none to display: auto or flex or inline block or whatever, in the event handler */
+  opacity: 0.5; /* increase in colour but not opacity. Research tells me that opacity can't be increased by a child, however, it can be overridden by changing the parent's class (*sigh*) in JavaScript, using the mouseover and mouseout events and applying two listeners to each button. so Six overall extra listeners - worth it? I'm not sure. */
 }
 
 .carousel_interface {

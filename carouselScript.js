@@ -76,7 +76,6 @@ function mobileSliderNav(touchends) {
   touchends.preventDefault()
 }
 
-
 let play = setInterval(() => moveRight(), 5000);
 let playing = true
 
