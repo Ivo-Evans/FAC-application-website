@@ -75,11 +75,11 @@ header {
   margin-right: 40px;
 }
 
-.section_content {
+section {
   margin-left: 40px; /*Maybe this is the offender for your ul not being as far left as you'd like*/
 }
 
-.section_content a {
+section a {
   overflow-wrap: break-word;
 }
 

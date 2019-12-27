@@ -76,7 +76,7 @@ main {
   height: 20vh;
 }
 
-.section_content a {
+section a {
   overflow-wrap: break-word;
 }
 
