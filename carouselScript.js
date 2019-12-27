@@ -23,14 +23,15 @@ dotSet.addEventListener('click', dotNav);
 
 function dotNav(event) {
   let target = event.target;
-  // try {changeImage(target.innerText - 1)}
-  try {
-    // console.log("dotNav is trying to call changeImage with " + target.id);
-    changeImage(target.id)
+  if (target.tagName == "BUTTON") {
+    try {
+      // console.log("dotNav is trying to call changeImage with " + target.id);
+      changeImage(target.id)
+    }
+    catch(err) {
+      // console.log("dotNav was called couldn't call changeImage with a button ID, is calling chaneImage with " + currentImage);
+      changeImage(currentImage)}
   }
-  catch(err) {
-    // console.log("dotNav was called couldn't call changeImage with a button ID, is calling chaneImage with " + currentImage);
-    changeImage(currentImage)}
 }
 
 const indexedDots = dotSet.firstElementChild.children
