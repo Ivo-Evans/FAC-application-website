@@ -139,6 +139,12 @@
   transition: all 0.15s ease;
 }
 
+.current_dot {
+  background-color: #242424!important;
+  opacity: 100%;
+  transition: all 0.15s ease;
+}
+
 .carousel_buttons {
   max-width: 96%;
   padding-left: 2%;

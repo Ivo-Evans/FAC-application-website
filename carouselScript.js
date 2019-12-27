@@ -18,8 +18,6 @@ function moveLeft() {
   currentImage <= 0 ? changeImage(images.length - 1) : changeImage(+currentImage - 1);
 }
 
-// const dotsSet = document.body.querySelector(".carousel_dots_set")
-// const dots = dotSet.firstElementChild.children // returns indexed html list
 const dotSet = document.body.querySelector(".carousel_dots_set");
 dotSet.addEventListener('click', dotNav);
 
@@ -35,6 +33,8 @@ function dotNav(event) {
     changeImage(currentImage)}
 }
 
+const indexedDots = dotSet.firstElementChild.children
+
 function changeImage(to) {
   // console.log("changeImage is trying to change the image to " + to);
   Array.from(images).forEach(im => im.classList.remove("visible_image"));
@@ -43,7 +43,9 @@ function changeImage(to) {
   images[to].classList.add("visible_image"); // perhaps this process could be optimised, bearing in mind CSS class precedence (a given thing can have two incompatible classes and the later declaration takes precedence)
   currentImage = to;
   // console.log("after changeImage's work, currentImage is " + currentImage);
-}
+  Array.from(indexedDots).forEach(li => li.firstElementChild.classList.remove('current_dot'));
+  indexedDots[currentImage].firstElementChild.classList.add('current_dot');
+} // you could rewrite this function to call a number of removing methods with currentImage, to remove classes specifically from the element they're assigned to rather than iterating, and then reassign currentImage to to, and then write a number of adding methods with currentImage. Quite elegant. 
 
 let touchArea = document.querySelector(".carousel_images");
 touchArea.addEventListener('touchstart', logStart);
