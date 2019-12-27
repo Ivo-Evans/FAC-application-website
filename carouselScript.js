@@ -18,6 +18,23 @@ function moveLeft() {
   currentImage <= 0 ? changeImage(images.length - 1) : changeImage(+currentImage - 1);
 }
 
+// const dotsSet = document.body.querySelector(".carousel_dots_set")
+// const dots = dotSet.firstElementChild.children // returns indexed html list
+const dotSet = document.body.querySelector(".carousel_dots_set");
+dotSet.addEventListener('click', dotNav);
+
+function dotNav(event) {
+  let target = event.target;
+  // try {changeImage(target.innerText - 1)}
+  try {
+    // console.log("dotNav is trying to call changeImage with " + target.id);
+    changeImage(target.id)
+  }
+  catch(err) {
+    // console.log("dotNav was called couldn't call changeImage with a button ID, is calling chaneImage with " + currentImage);
+    changeImage(currentImage)}
+}
+
 function changeImage(to) {
   // console.log("changeImage is trying to change the image to " + to);
   Array.from(images).forEach(im => im.classList.remove("visible_image"));
@@ -26,17 +43,6 @@ function changeImage(to) {
   images[to].classList.add("visible_image"); // perhaps this process could be optimised, bearing in mind CSS class precedence (a given thing can have two incompatible classes and the later declaration takes precedence)
   currentImage = to;
   // console.log("after changeImage's work, currentImage is " + currentImage);
-}
-
-let play = setInterval(() => moveRight(), 5000);
-let playing = true
-
-const playPauseButton = document.getElementById("playPause");
-playPauseButton.addEventListener('click', playPause);
-
-function playPause() {
-  playing ? clearInterval(play) : play = setInterval(() => moveRight(), 5000) ;
-  playing = !playing;
 }
 
 let touchArea = document.querySelector(".carousel_images");
@@ -69,20 +75,18 @@ function mobileSliderNav(touchends) {
 }
 
 
-const dots = document.body.querySelector(".carousel_dots_set");
-dots.addEventListener('click', dotNav);
+let play = setInterval(() => moveRight(), 5000);
+let playing = true
 
-function dotNav(event) {
-  let target = event.target;
-  // try {changeImage(target.innerText - 1)}
-  try {
-    // console.log("dotNav is trying to call changeImage with " + target.id);
-    changeImage(target.id)
-  }
-  catch(err) {
-    // console.log("dotNav was called couldn't call changeImage with a button ID, is calling chaneImage with " + currentImage);
-    changeImage(currentImage)}
+const playPauseButton = document.getElementById("playPause");
+playPauseButton.addEventListener('click', playPause);
+
+function playPause() {
+  playing ? clearInterval(play) : play = setInterval(() => moveRight(), 5000) ;
+  playing = !playing;
 }
+
+
 
 
 
@@ -91,6 +95,6 @@ function dotNav(event) {
 TODO: see whether this works with differently-sized images. It might.
 TODO: add caption support?
 TODO: investigate using JS to animate the transtition??? Therefore going above and beyond the objectives of this expedition? For instance, you could send the old image 50000 pixels (maybe thats too much lol) to the left/right - but then how would you get the new one from the other side?? Spawn it in at that distance?
-TODO: highlight the current image's corresponding dot. You could do this in changeImage, rather than add another listener. 
+TODO: highlight the current image's corresponding dot. You could do this in changeImage, rather than add another listener.
 TODO: add play button and write transition/switch function from pause to play, or incorporate into the current switch function. Like if playing, playButton.style=display:none, and then attach the event listener to both the play and pause buttons. This if-else shouldn't be a ternary since each consequent has two parts. It could be two ternary operations: prettier but more computationally inefficient.
 */
