@@ -34,6 +34,7 @@
   transition: 0.3s;
   display: flex;
   flex-direction: column;
+  justify-content: space-around;
 }
 
 .left_sidebar_dynamic a {
