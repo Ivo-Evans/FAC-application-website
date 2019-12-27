@@ -86,17 +86,12 @@ playPauseButton.addEventListener('click', playPause);
 function playPause() {
   playing ? clearInterval(play) : play = setInterval(() => moveRight(), 5000) ;
   playing = !playing;
+  playPauseButton.classList.toggle("fa-pause");
+  playPauseButton.classList.toggle("fa-play");
 }
-
-
-
-
-
 
 /*
 TODO: see whether this works with differently-sized images. It might.
 TODO: add caption support?
 TODO: investigate using JS to animate the transtition??? Therefore going above and beyond the objectives of this expedition? For instance, you could send the old image 50000 pixels (maybe thats too much lol) to the left/right - but then how would you get the new one from the other side?? Spawn it in at that distance?
-TODO: highlight the current image's corresponding dot. You could do this in changeImage, rather than add another listener.
-TODO: add play button and write transition/switch function from pause to play, or incorporate into the current switch function. Like if playing, playButton.style=display:none, and then attach the event listener to both the play and pause buttons. This if-else shouldn't be a ternary since each consequent has two parts. It could be two ternary operations: prettier but more computationally inefficient.
 */
