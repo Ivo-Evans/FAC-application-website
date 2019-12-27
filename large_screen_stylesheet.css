@@ -141,8 +141,6 @@
 
 .current_dot {
   background-color: #242424!important;
-  opacity: 100%;
-  transition: all 0.15s ease;
 }
 
 .carousel_buttons {
