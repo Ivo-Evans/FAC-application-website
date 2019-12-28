@@ -57,7 +57,7 @@ let startX = 0;
 
 function logStart(touches) { // maybe this could be a function Expression, inside the addEventListener, instead of a separate, declared function.
   startX = parseInt(touches.changedTouches[0].clientX);
-  touches.preventDefault(); // necessary? I don't know but better to remove later than earlier
+  touches.preventDefault(); // TODO: you might want to disable these prevent default's, because it makes it difficult to slide the page down on mobile. In landscape view, I even stranded myself in the middle of the picture, unable to move... lol. 
 }
 
 function mobileSliderNav(touchends) {
@@ -94,6 +94,5 @@ function playPause() {
 
 /*
 TODO: see whether this works with differently-sized images. It might.
-TODO: add caption support?
 TODO: investigate using JS to animate the transtition??? Therefore going above and beyond the objectives of this expedition? For instance, you could send the old image 50000 pixels (maybe thats too much lol) to the left/right - but then how would you get the new one from the other side?? Spawn it in at that distance?
 */
