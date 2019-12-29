@@ -35,12 +35,8 @@ dotSet.addEventListener('click', dotNav);
 function dotNav(event) {
   let target = event.target;
   if (target.tagName == "BUTTON") {
-    try {
-      changeImage(target.id)
-    }
-    catch(err) {
-      changeImage(currentImage)}
-  }
+    try {changeImage(target.id)}
+    catch(err) {changeImage(currentImage)}}
 }
 
 const indexedDots = dotSet.firstElementChild.children
