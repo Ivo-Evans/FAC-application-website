@@ -67,10 +67,7 @@ touchArea.addEventListener('touchstart', logStart);
 touchArea.addEventListener('touchend', mobileSliderNav);
 let startX = 0;
 
-function logStart(touches) { // maybe this could be a function Expression, inside the addEventListener, instead of a separate, declared function.
-  startX = parseInt(touches.changedTouches[0].clientX);
-  touches.preventDefault(); // TODO: you might want to disable these prevent default's, because it makes it difficult to slide the page down on mobile. In landscape view, I even stranded myself in the middle of the picture, unable to move... lol.
-}
+function logStart(touches) {startX = parseInt(touches.changedTouches[0].clientX);}
 
 function mobileSliderNav(touchends) {
   let endX = touchends.changedTouches[0].clientX;
@@ -88,7 +85,6 @@ function mobileSliderNav(touchends) {
       playPause();
     }
   }
-  touchends.preventDefault()
 }
 
 let play = setInterval(() => moveRight(), 5000);
