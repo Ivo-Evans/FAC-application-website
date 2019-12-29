@@ -21,8 +21,7 @@ window.addEventListener('keyup', event => {
 });
 
 
-function moveRight() { // I believe that this is the event *handler*, and the event listener has no binding.
-  // console.log("moveRight thinks currentImage is " + currentImage)
+function moveRight() {
   currentImage >= images.length - 1 ? changeImage(0) : changeImage(+currentImage + 1); //  notice type conversion. It is important, because moveRight was sometimes calling changeImage(41) or (61).
 }
 
@@ -37,11 +36,9 @@ function dotNav(event) {
   let target = event.target;
   if (target.tagName == "BUTTON") {
     try {
-      // console.log("dotNav is trying to call changeImage with " + target.id);
       changeImage(target.id)
     }
     catch(err) {
-      // console.log("dotNav was called couldn't call changeImage with a button ID, is calling chaneImage with " + currentImage);
       changeImage(currentImage)}
   }
 }
@@ -107,7 +104,3 @@ function playPause(flag) {
     playPauseButton.classList.toggle("fa-play");
   }
 }
-
-/*
-TODO: see whether this works with differently-sized images. It might.
-*/
