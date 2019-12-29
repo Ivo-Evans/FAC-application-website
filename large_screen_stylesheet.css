@@ -146,24 +146,23 @@ q {
   border-style: solid;
   border-width: 0px;
   display: inline-block;
-  background-color: #FFF;
-  opacity: 50%;
+  background-color: #242424;
+  opacity: 0.8;
   margin: 0 6px;
   outline: none;
   height: 12px;
   width: 2px;
-  /* If you are sizing height and width by px, 11 5 or 12 5 seems circle-like. In fact - interestingly - height 12 seems to be required for the circle. */
 }
 
 .carousel_dots_set button:hover {
-  background-color: #242424;
-  opacity: 1;
+  background-color: #FFF;
+  opacity: 0.5;
   transition: all 0.15s ease;
 }
 
 .carousel_dots_set .current_dot {
-  background-color: #242424;
-  opacity: 1;
+  background-color: #FFF;
+  opacity: 0.5;
   transition: all 0.4s ease;
 }
 
@@ -179,7 +178,7 @@ q {
   transform: translate(0, -50%);
   width: 100%;
   font-size: 60px;
-  color: #FFF;
+  color: #000;
   opacity: 0.5;
 }
 
