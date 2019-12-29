@@ -8,6 +8,18 @@ const leftButton = document.getElementById("leftButton");
 
 rightButton.addEventListener('click', moveRight);
 leftButton.addEventListener('click', moveLeft);
+window.addEventListener('keydown', event => {if (event.key == " ") {event.preventDefault();}
+})
+window.addEventListener('keyup', event => {
+  if (event.key == "ArrowRight") {
+    moveRight();
+  } else if (event.key == "ArrowLeft") {
+    moveLeft();
+  } else if (event.key == " "){
+    playPause();
+  }
+});
+
 
 function moveRight() { // I believe that this is the event *handler*, and the event listener has no binding.
   // console.log("moveRight thinks currentImage is " + currentImage)
