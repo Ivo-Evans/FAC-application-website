@@ -84,7 +84,8 @@ section ul {
 }
 
 footer {
-  maring-left: 40px;
+  margin-left: 40px;
+  text-align: center;
 }
 
 footer img {

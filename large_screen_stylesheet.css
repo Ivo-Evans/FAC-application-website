@@ -67,12 +67,14 @@ main {
 }
 
 footer {
+  text-align: center;
   margin-left: 250px; /* this needs to be same as sidebar width. Would it be clever to use a variable here? */
   margin-right: 250px; /* ibid */
   padding: 0px 50px;
 }
 
 footer img {
+  margin: 30px 0;
   max-width: 100%;
 }
 
