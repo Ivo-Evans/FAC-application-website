@@ -79,6 +79,10 @@ section a {
   overflow-wrap: break-word;
 }
 
+section ul {
+  padding-left: 25px;
+}
+
 /* carousel stuff */
 
 .carousel_images {
