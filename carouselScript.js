@@ -92,11 +92,9 @@ const playPauseButton = document.getElementById("playPause");
 playPauseButton.addEventListener('click', playPause);
 
 function playPause(flag) {
-  if (flag == 'reset') {
-    if (playing == true) {
+  if (flag == 'reset' && playing == true) {
       clearInterval(play);
       play = setInterval(() => moveRight(), 5000);
-    }
   } else {
     playing ? clearInterval(play) : play = setInterval(() => moveRight(), 5000) ;
     playing = !playing;
