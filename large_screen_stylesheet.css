@@ -98,6 +98,7 @@ q {
 .carousel_images {
   position: relative;
   max-width: 100%;
+  overflow-x: hidden;
 }
 
 .visible_image {
@@ -115,10 +116,10 @@ q {
   position: absolute;
   min-width: 100%;
   top: 0px;
-  background-color: #FFF;
+  background-color: #242424;
   opacity: 0.7;
-  color: #242424;
-  padding: 2px 0;
+  color: #FFF;
+  padding: 4px;
   margin: 0;
   font-size: 12px;
 }
