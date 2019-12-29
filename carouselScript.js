@@ -60,6 +60,7 @@ function changeImage(to) {
   images[currentImage].classList.add("visible_image");
   indexedDots[currentImage].firstElementChild.classList.add('current_dot');
   captionBox.innerText = images[currentImage].alt;
+  playPause('reset');
 }
 
 let touchArea = document.querySelector(".carousel_images");
@@ -93,11 +94,18 @@ let playing = true
 const playPauseButton = document.getElementById("playPause");
 playPauseButton.addEventListener('click', playPause);
 
-function playPause() {
-  playing ? clearInterval(play) : play = setInterval(() => moveRight(), 5000) ;
-  playing = !playing;
-  playPauseButton.classList.toggle("fa-pause");
-  playPauseButton.classList.toggle("fa-play");
+function playPause(flag) {
+  if (flag == 'reset') {
+    if (playing == true) {
+      clearInterval(play);
+      play = setInterval(() => moveRight(), 5000);
+    }
+  } else {
+    playing ? clearInterval(play) : play = setInterval(() => moveRight(), 5000) ;
+    playing = !playing;
+    playPauseButton.classList.toggle("fa-pause");
+    playPauseButton.classList.toggle("fa-play");
+  }
 }
 
 /*
