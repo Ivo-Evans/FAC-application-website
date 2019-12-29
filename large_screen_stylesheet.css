@@ -66,6 +66,16 @@ main {
   padding: 0px 50px;
 }
 
+footer {
+  margin-left: 250px; /* this needs to be same as sidebar width. Would it be clever to use a variable here? */
+  margin-right: 250px; /* ibid */
+  padding: 0px 50px;
+}
+
+footer img {
+  max-width: 100%;
+}
+
 .selfie {
   width: 50%;
   float: right;
@@ -139,6 +149,7 @@ q {
   display: flex;
   list-style-type: none;
   padding-left: 0;
+  margin-bottom: 0;
 }
 
 .carousel_dots_set button {
@@ -184,7 +195,6 @@ q {
 
 .carousel_buttons i:hover {
   color: #242424;
-  opacity: 1; /* increase in colour but not opacity. Research tells me that opacity can't be increased by a child, however, it can be overridden by changing the parent's class (*sigh*) in JavaScript, using the mouseover and mouseout events and applying two listeners to each button. so Six overall extra listeners - worth it? I'm not sure. */
 }
 
 .carousel_interface {
