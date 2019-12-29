@@ -83,6 +83,14 @@ section ul {
   padding-left: 25px;
 }
 
+footer {
+  maring-left: 40px;
+}
+
+footer img {
+  max-width: 100%;
+}
+
 /* carousel stuff */
 
 .carousel_images {
