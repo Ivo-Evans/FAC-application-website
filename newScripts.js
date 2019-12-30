@@ -15,14 +15,15 @@ function move(n) {
 }
 
 function revertPosition() {
+  console.log(currentPicture);
   imageStrip.style.transition = "none";
-  if (currentPicture == 8) {
+  if (currentPicture == 9) {
     console.log(currentPicture);
     console.log(jumpWidth);
     currentPicture = 1;
     pixelPosition = - (jumpWidth);
   } else if (currentPicture == 0) {
-    currentPicture = 7;
+    currentPicture = 8;
     pixelPosition -= jumpWidth * 8;
   }
   imageStrip.style.transform = "translateX(" + pixelPosition + "px)";
