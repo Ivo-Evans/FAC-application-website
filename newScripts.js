@@ -4,7 +4,7 @@ let jumpWidth = imageStrip.offsetWidth; // this won't be variable
 let pixelPosition = 0;
 let currentPicture = 0;
 let numberOfPictures = imageSet.count
-move(-1); // this is ad-hoc, clearly
+move(-1); // this is ad-hoc, clearly. Perhaps declare variables, then assign them on load. At the same time as assignment, call imageStrip.style.transform yada yada yada. There should also be an onresize handler which calls move(0) and reassigns some variables.
 
 function move(n) {
   imageStrip.style.transition = "transform 0.15s ease-in-out";
@@ -15,7 +15,6 @@ function move(n) {
 }
 
 function revertPosition() {
-  console.log(currentPicture);
   imageStrip.style.transition = "none";
   if (currentPicture == 9) {
     console.log(currentPicture);
@@ -28,5 +27,15 @@ function revertPosition() {
   }
   imageStrip.style.transform = "translateX(" + pixelPosition + "px)";
 }
+
+imageStrip.addEventListener('transitionend', revertPosition);
+
+
+
+// function comboTest() {
+//   move(-8);
+//   revertPosition();
+//   move(-3);
+// } Success!!! No jaggedy movement!!! Clever CSS!!!
 
 // currently, resize really messes things up. I see two problems (there may be more). Firstly, the image on the screen goes to the wrong place instantly on resize. Secondly, I think, image distance needs to be recalibrated. One thing you could do is assign all your variables on load, and assign them all on resize.
