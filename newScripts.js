@@ -2,11 +2,13 @@ let imageSet = document.querySelectorAll(".image");
 let imageStrip = document.querySelector(".carousel_images");
 let jumpWidth = imageStrip.offsetWidth; // this won't be variable
 let pixelPosition = 0;
+let currentPicture = 0;
 
 function move(n) {
-  imageStrip.style.transition = "transform 0.5s ease-in-out";
+  imageStrip.style.transition = "transform 0.15s ease-in-out";
   jumpWidth = document.querySelector(".carousel_images").offsetWidth;
   pixelPosition += (n * jumpWidth);
+  currentPicture += n
   imageStrip.style.transform = "translateX(" + pixelPosition + "px)"
 }
 
