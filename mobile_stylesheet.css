@@ -96,6 +96,22 @@ footer img {
 
 /* carousel stuff */
 
+.carousel {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+.carousel_images {
+  max-width: 100%;
+  display: flex;
+  position: relative;
+}
+
+.carousel_images img {
+  max-width: 100%;
+}
+
+/*
 .carousel_images {
   position: relative;
   max-width: 100%;
@@ -146,3 +162,4 @@ footer img {
   background-color: #FFF;
   flex-grow: 2;
 }
+*/

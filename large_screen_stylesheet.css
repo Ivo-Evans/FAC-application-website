@@ -106,7 +106,25 @@ q {
 
 
 /* carousel stuff */
+.carousel {
+  max-width: 100%;
+  overflow-x: hidden;
+  
+  border: 5px;
+  border-style: solid;
+}
 
+.carousel_images {
+  display: flex;
+  position: relative;
+
+}
+
+.carousel_images img {
+  max-width: 100%;
+}
+
+/*
 .carousel_images {
   position: relative;
   max-width: 100%;
@@ -214,3 +232,4 @@ q {
 .mobile_instructions {
   display: none;
 }
+*/
