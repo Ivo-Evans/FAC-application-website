@@ -1,12 +1,11 @@
 'use strict';
 
-
 let imageSet = document.querySelectorAll(".image");
 let imageStrip = document.querySelector(".carousel_images"); // this updates intelligently
 let jumpWidth
 let pixelPosition
 let currentPicture = 1; // 0 is a looping picture, as is 9
-let numberOfPictures = imageSet.count // still haven't actually used this....
+let numberOfPictures = imageSet.count - 2// still haven't actually used this....
 let indexedDots = document.querySelectorAll(".carousel_dots button")
 
 recalibrate();
@@ -26,23 +25,22 @@ document.body.querySelector(".carousel_dots").addEventListener('click', dotNav);
 window.addEventListener('keydown', (keypress) => {
   if (keypress.key == "ArrowLeft") {move(1)}
   if (keypress.key == "ArrowRight") {move(-1)}
-  // if (keypress.key == " ") {
-  //   keypress.preventDefault();
-  //   // play pause function
-  // }
-}) /*TODO: currently, holding this down scrolls super fast, faster than the loop updates. Either make this a keyup event, thus precluding scrolling, or find that youtube video containing a fix. */
-
-
+  if (keypress.key == " ") {
+    keypress.preventDefault();
+    playPause();
+  }
+}) /*TODO: currently, holding right or left down scrolls super fast, faster than the loop updates. Either make this a keyup event, thus precluding scrolling, or find that youtube video containing a fix. */
 
 function move(n) {
   indexedDots[currentPicture - 1].classList.remove("current_dot");
   imageStrip.style.transition = "transform 0.15s ease-in-out";
   pixelPosition += (n * jumpWidth);
-  currentPicture -= n // pixel position decreases for every picture increase
+  currentPicture -= n // pixel position increases - goes rightward for every picture decrease - go to an earlier picture
   imageStrip.style.transform = "translateX(" + pixelPosition + "px)";
   try {indexedDots[currentPicture - 1].classList.add("current_dot")}
   catch {n > 0 ? indexedDots[indexedDots.length - 1].classList.add("current_dot")
-      : indexedDots[0].classList.add("current_dot")}
+      : indexedDots[0].classList.add("current_dot")};
+  playPause('reset');
 }
 
 function revertPosition() {
@@ -62,25 +60,19 @@ function dotNav(event) {
   if (target.tagName == "BUTTON") {
     move(currentPicture - (+target.id));
   }
-  /* make it go the shortest possible path.
-  if the target is greater than current, you find the positive steps by subtracting current from target
-
-  If the target is lesser than current, you find the positive steps by subtracting the current value from the max and then adding the target
-
-  If the target is greater than current, you find the negative steps by negating ((max - target) + current) // I'm sure there's a better way but I'm sleepy lol.
-
-  If the target is lesser than current, you find the negative steps by subtracting current from the target
-
-  so this would be a two-way conditional that encoded a two-value array. We'd then call move(Math.min(...arr)); A nice excuse to practice the rest operator too.
-  */
 }
 
 let touchArea = document.querySelector(".carousel");
 touchArea.addEventListener('touchstart', logStart);
 touchArea.addEventListener('touchend', mobileSliderNav);
+
+let touchableButton = document.getElementById('playPause');
+touchableButton.addEventListener('touchstart', logStart);
+touchableButton.addEventListener('touchend', mobileSliderNav);
+
 let startX = 0;
 
-function logStart(touches) {startX = parseInt(touches.changedTouches[0].clientX);}
+function logStart(touches) {startX = parseInt(touches.changedTouches[0].clientX)}
 
 function mobileSliderNav(touchends) {
   let endX = touchends.changedTouches[0].clientX;
@@ -88,17 +80,40 @@ function mobileSliderNav(touchends) {
   if (Math.abs(startX - endX) > 10) {
     startX < endX ? move(1) : move(-1);
   } else {
-    // playPause()
-    // pause button flash and remove after a certain amount of time??
+    playPause()
+    temporaryPlayPauseButton(); // I'm going to give this a **provisional** pass - it looks like it works on my android. There were some bugs I couldn't replicate. If it doesn't work, and you decide to delete, be aware that there is css styling for #playPause that you should delete also. 
   }
 }
 
+function temporaryPlayPauseButton() {
+  let imageHeight = imageSet[0].firstElementChild.offsetHeight;
+  let imageWidth = imageSet[0].firstElementChild.offsetWidth;
+ // this is clearly quite an involved approach but CSS was giving me grief.
+  playPauseButton.style.display = "inline"
+  playPauseButton.style.left = (imageWidth - playPauseButton.offsetWidth) / 2 + "px";
+  playPauseButton.style.top = (imageHeight - playPauseButton.offsetHeight) / 2 + "px";
+  setTimeout(() => playPauseButton.style.display = "none", 2000)
+}
+
+let playPauseButton = document.getElementById("playPause")
+playPauseButton.addEventListener('click', playPause);
+let play = setInterval(() => move(-1), 7000); // duration could be shorter if actual transition was longer
+let playing = true;
+
+function playPause(flag) {
+  if (flag == 'reset' && playing == true) {
+      clearInterval(play);
+      play = setInterval(() => move(-1), 7000);
+  } else {
+    playing ? clearInterval(play) : play = setInterval(() => move(-1), 7000) ;
+    playing = !playing;
+    playPauseButton.classList.toggle("fa-pause");
+    playPauseButton.classList.toggle("fa-play");
+  }
+}
 
 /*
 To-Dos
-TODO: add timer function and play/pause function
-TODO: add time updater
-TODO: style buttons for desktop. Keep dots visible for both desktop and mobile users.
-Finish mobile styling.
-TODO: some of the captions don't match up with the images. There's a white space along some top edges, and the left/right edges are not continuous - edited jpegs have fuzzy edges, while rendered boxes have sharp ones. Consider a different style of caption - maybe white. 
+TODO: some of the captions don't match up with the images. There's a white space along some top edges, and the left/right edges are not continuous - edited jpegs have fuzzy edges, while rendered boxes have sharp ones. Consider a different style of caption - maybe white.
+TODO: finish work on experimental dot feature??
 */

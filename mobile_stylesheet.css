@@ -101,6 +101,7 @@ footer img {
   min-width: 100%;
   overflow-x: hidden;
   background-color: #000;
+  position: relative;
 }
 
 .carousel_images {
@@ -126,8 +127,12 @@ footer img {
   vertical-align: middle;
 }
 
-.carousel_buttons {
+#playPause {
   display: none;
+  position: absolute;
+  color: #dedede;
+  opacity: 0.9;
+  font-size: 40px;
 }
 
 .carousel_dots {
