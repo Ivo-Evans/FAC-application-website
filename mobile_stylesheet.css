@@ -100,6 +100,7 @@ footer img {
   max-width: 100%; /* TODO: work out why you're using both max and min here. min seems effective for mobile, max for desktop */
   min-width: 100%;
   overflow-x: hidden;
+  background-color: #000;
 }
 
 .carousel_images {
@@ -115,7 +116,6 @@ footer img {
 }
 
 .carousel_images figcaption {
-  background-color: #000;
   font-size: 10px;
   color: #FFF;
   padding: 2px;
@@ -133,6 +133,7 @@ footer img {
 .carousel_dots {
  display: flex;
  justify-content: center;
+ background-color: #FFF;
 }
 
 .carousel_dots ul {
