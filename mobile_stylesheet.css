@@ -97,12 +97,15 @@ footer img {
 /* carousel stuff */
 
 .carousel {
-  max-width: 100%;
+  max-width: 100%; /* TODO: work out why you're using both max and min here. min seems effective for mobile, max for desktop */
+  min-width: 100%;
   overflow-x: hidden;
+  border: 5px solid green;
 }
 
 .carousel_images {
   max-width: 100%;
+  min-width: 100%;
   display: flex;
   position: relative;
 }
@@ -112,8 +115,7 @@ footer img {
 }
 
 .carousel_dots {
-
-  margin-left: 50%;
+ margin-left: 50%;
  transform: translate(-50%);
 }
 

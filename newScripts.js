@@ -11,6 +11,7 @@ let numberOfPictures = imageSet.count
 document.getElementById('leftButton').addEventListener('click', () => move(1));
 document.getElementById('rightButton').addEventListener('click', () => move(-1));
 imageStrip.addEventListener('transitionend', revertPosition);
+document.body.querySelector(".carousel_dots").addEventListener('click', dotNav);
 
 
 function move(n) {
@@ -35,8 +36,15 @@ function revertPosition() {
   imageStrip.style.transform = "translateX(" + pixelPosition + "px)";
 }
 
-function dotNav(target) {
-  move(currentPicture - target);
+function dotNav(event) {
+  let target = event.target;
+  console.log(target.tagName);
+  if (target.tagName == "BUTTON") {
+    console.log(target.id);
+    move(currentPicture - (+target.id));
+  }
+  //TODO: make it go the shortest possible path
 }
+
 
 // currently, resize really messes things up. I see two problems (there may be more). Firstly, the image on the screen goes to the wrong place instantly on resize. Secondly, I think, image distance needs to be recalibrated. One thing you could do is assign all your variables on load, and assign them all on resize, and call move(0) on resize.
