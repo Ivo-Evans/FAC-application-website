@@ -114,18 +114,26 @@ footer img {
   max-width: 100%;
 }
 
+.carousel_buttons {
+  border: 5px solid red;
+}
+
 .carousel_dots {
- margin-left: 50%;
- transform: translate(-50%);
+ display: flex;
+ justify-content: center;
+ border: 5px solid pink;
 }
 
 .carousel_dots ul {
   display: flex;
   list-style-type: none;
+  padding-left: 0px;
 }
 
 .carousel_dots ul li {
+  padding-left: 0px;
   padding: 4px;
+
 }
 
 .carousel_dots button {
