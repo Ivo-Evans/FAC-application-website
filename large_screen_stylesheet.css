@@ -147,6 +147,7 @@ q {
   display: flex;
   list-style-type: none;
   padding-left: 0px;
+  margin: 0;
 }
 
 .carousel_dots ul li {
@@ -182,7 +183,7 @@ q {
   min-width: 96%;
   max-width: 96%;
   padding: 0 2%;
-  color: #FFF;
+  color: #242424;
   font-size: 60px;
   display: flex;
   justify-content: space-between; /* There's a better flexbox property*/
