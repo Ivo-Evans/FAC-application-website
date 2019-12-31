@@ -1,5 +1,6 @@
 'use strict';
 
+
 let imageSet = document.querySelectorAll(".image");
 let imageStrip = document.querySelector(".carousel_images"); // this updates intelligently
 let jumpWidth
@@ -74,6 +75,22 @@ function dotNav(event) {
   */
 }
 
+let touchArea = document.querySelector(".carousel");
+touchArea.addEventListener('touchstart', logStart);
+touchArea.addEventListener('touchend', mobileSliderNav);
+let startX = 0;
+
+function logStart(touches) {startX = parseInt(touches.changedTouches[0].clientX);}
+
+function mobileSliderNav(touchends) {
+  let endX = touchends.changedTouches[0].clientX;
+
+  if (Math.abs(startX - endX) > 10) {
+    startX < endX ? move(1) : move(-1);
+  } else {
+    // playPause()
+  }
+}
 
 
 /*
