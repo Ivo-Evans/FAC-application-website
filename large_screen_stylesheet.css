@@ -177,6 +177,11 @@ q {
 }
 
 .carousel_buttons {
+  display: none;
+}
+
+.carousel:hover .carousel_buttons{
+  display: inline;
   position: absolute;
   bottom: 50%;
   transform: translate(0, -50%);
@@ -187,7 +192,6 @@ q {
   font-size: 60px;
   display: flex;
   justify-content: space-between; /* There's a better flexbox property*/
-
 }
 
 /*
