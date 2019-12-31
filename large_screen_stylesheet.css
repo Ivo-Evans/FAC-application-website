@@ -109,12 +109,14 @@ q {
 .carousel {
   max-width: 100%;
   overflow-x: hidden;
+  position: relative;
   /* background-color: #000; */
 }
 
 .carousel_images {
   display: flex;
   position: relative;
+
 }
 
 .carousel_images figure {
@@ -145,7 +147,6 @@ q {
   display: flex;
   list-style-type: none;
   padding-left: 0px;
-  margin: 0;
 }
 
 .carousel_dots ul li {
@@ -175,11 +176,17 @@ q {
 }
 
 .carousel_buttons {
-  min-width: 100%;
-  max-width: 100%;
+  position: absolute;
+  bottom: 50%;
+  transform: translate(0, -50%);
+  min-width: 96%;
+  max-width: 96%;
+  padding: 0 2%;
+  color: #FFF;
+  font-size: 60px;
   display: flex;
-  justify-content: space-between;
-  position: relative;
+  justify-content: space-between; /* There's a better flexbox property*/
+
 }
 
 /*
