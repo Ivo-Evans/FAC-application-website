@@ -7,6 +7,7 @@ let jumpWidth
 let pixelPosition
 let currentPicture = 1; // 0 is a looping picture, as is 9
 let numberOfPictures = imageSet.count // still haven't actually used this....
+let indexedDots = document.querySelectorAll(".carousel_dots button")
 
 recalibrate();
 window.addEventListener('resize', recalibrate);
@@ -34,18 +35,19 @@ window.addEventListener('keydown', (keypress) => {
 
 
 function move(n) {
+  indexedDots[currentPicture - 1].classList.remove("current_dot");
   imageStrip.style.transition = "transform 0.15s ease-in-out";
-    // jumpWidth = document.querySelector(".carousel_images").offsetWidth; // this should only be redefined here temporarily. Later, it should be part of a resize listener's callback.
   pixelPosition += (n * jumpWidth);
   currentPicture -= n // pixel position decreases for every picture increase
-  imageStrip.style.transform = "translateX(" + pixelPosition + "px)"
+  imageStrip.style.transform = "translateX(" + pixelPosition + "px)";
+  try {indexedDots[currentPicture - 1].classList.add("current_dot")}
+  catch {n > 0 ? indexedDots[indexedDots.length - 1].classList.add("current_dot")
+      : indexedDots[0].classList.add("current_dot")}
 }
 
 function revertPosition() {
   imageStrip.style.transition = "none";
   if (currentPicture >= 9) {
-    console.log(currentPicture);
-    console.log(jumpWidth);
     currentPicture = 1;
     pixelPosition = - (jumpWidth);
   } else if (currentPicture <= 0) {
@@ -57,7 +59,6 @@ function revertPosition() {
 
 function dotNav(event) {
   let target = event.target;
-  console.log(target.tagName);
   if (target.tagName == "BUTTON") {
     console.log(target.id);
     move(currentPicture - (+target.id));

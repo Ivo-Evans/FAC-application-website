@@ -161,8 +161,8 @@ q {
   transition: all 0.15s ease;
 }
 
-.carousel_dots_set .current_dot {
-  background-color: #FFF;
+.carousel_dots .current_dot {
+  background-color: #242424;
   opacity: 0.5;
   transition: all 0.4s ease;
 }
