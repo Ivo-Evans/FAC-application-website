@@ -111,6 +111,38 @@ footer img {
   max-width: 100%;
 }
 
+.carousel_dots {
+
+  margin-left: 50%;
+ transform: translate(-50%);
+}
+
+.carousel_dots ul {
+  display: flex;
+  list-style-type: none;
+}
+
+.carousel_dots ul li {
+  padding: 4px;
+}
+
+.carousel_dots button {
+  border-radius: 50%;
+  border-width: 0px;
+  background-color: #242424;
+  opacity: 0.8;
+  outline: none;
+  height: 12px;
+  width: 2px;
+}
+
+.carousel_dots_set .current_dot {
+  background-color: #FFF;
+  opacity: 0.5;
+  transition: all 0.4s ease;
+}
+
+
 /*
 .carousel_images {
   position: relative;
