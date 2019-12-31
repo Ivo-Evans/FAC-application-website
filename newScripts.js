@@ -60,7 +60,6 @@ function revertPosition() {
 function dotNav(event) {
   let target = event.target;
   if (target.tagName == "BUTTON") {
-    console.log(target.id);
     move(currentPicture - (+target.id));
   }
   /* make it go the shortest possible path.
