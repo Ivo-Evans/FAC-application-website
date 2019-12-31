@@ -1,12 +1,22 @@
 'use strict';
 
 let imageSet = document.querySelectorAll(".image");
-let imageStrip = document.querySelector(".carousel_images");
+let imageStrip = document.querySelector(".carousel_images"); // this updates intelligently
 let jumpWidth = imageStrip.offsetWidth; // this won't be variable
 let pixelPosition = -jumpWidth;
-imageStrip.style.transform = "translateX(" + -jumpWidth + "px)"
+// imageStrip.style.transform = "translateX(" + -jumpWidth + "px)"
 let currentPicture = 1; // 0 is a looping picture, as is 9
-let numberOfPictures = imageSet.count
+let numberOfPictures = imageSet.count // still haven't actually used this....
+
+recalibrate();
+window.addEventListener('resize', recalibrate);
+
+function recalibrate() {
+  jumpWidth = imageStrip.offsetWidth;
+  pixelPosition = -(currentPicture * jumpWidth);
+  imageStrip.style.transform = "translateX(" + pixelPosition + "px)"
+}
+
 
 document.getElementById('leftButton').addEventListener('click', () => move(1));
 document.getElementById('rightButton').addEventListener('click', () => move(-1));
@@ -16,7 +26,7 @@ document.body.querySelector(".carousel_dots").addEventListener('click', dotNav);
 
 function move(n) {
   imageStrip.style.transition = "transform 0.15s ease-in-out";
-  jumpWidth = document.querySelector(".carousel_images").offsetWidth; // this should only be redefined here temporarily. Later, it should be part of a resize listener's callback.
+    // jumpWidth = document.querySelector(".carousel_images").offsetWidth; // this should only be redefined here temporarily. Later, it should be part of a resize listener's callback.
   pixelPosition += (n * jumpWidth);
   currentPicture -= n // pixel position decreases for every picture increase
   imageStrip.style.transform = "translateX(" + pixelPosition + "px)"
