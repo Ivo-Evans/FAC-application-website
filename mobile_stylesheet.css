@@ -100,7 +100,6 @@ footer img {
   max-width: 100%; /* TODO: work out why you're using both max and min here. min seems effective for mobile, max for desktop */
   min-width: 100%;
   overflow-x: hidden;
-  border: 5px solid green;
 }
 
 .carousel_images {
@@ -115,30 +114,36 @@ footer img {
   margin: 0;
 }
 
+.carousel_images figcaption {
+  background-color: #000;
+  font-size: 10px;
+  color: #FFF;
+}
+
 .carousel_images img {
   max-width: 100%;
+  vertical-align: middle;
 }
 
 .carousel_buttons {
-  border: 5px solid red;
+  display: none;
 }
 
 .carousel_dots {
  display: flex;
  justify-content: center;
- border: 5px solid pink;
 }
 
 .carousel_dots ul {
   display: flex;
   list-style-type: none;
   padding-left: 0px;
+  margin: 0;
 }
 
 .carousel_dots ul li {
   padding-left: 0px;
   padding: 4px;
-
 }
 
 .carousel_dots button {
@@ -148,11 +153,10 @@ footer img {
   opacity: 0.8;
   outline: none;
   height: 12px;
-  width: 2px;
 }
 
 .carousel_dots .current_dot {
-  background-color: #242424;
+  background-color: #242424; /*TODO: consider lightening this. If so, do it uniformly across stylesheets */
   opacity: 0.5;
   transition: all 0.4s ease;
 }

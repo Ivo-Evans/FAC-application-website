@@ -99,4 +99,4 @@ To-Dos
 TODO: add timer function and play/pause function
 TODO: add time updater
 TODO: style buttons for desktop. Keep dots visible for both desktop and mobile users.
-*/
+Finish mobile styling. */
