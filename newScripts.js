@@ -29,9 +29,11 @@ window.addEventListener('keydown', (keypress) => {
     keypress.preventDefault();
     playPause();
   }
-}) /*TODO: currently, holding right or left down scrolls super fast, faster than the loop updates. Either make this a keyup event, thus precluding scrolling, or find that youtube video containing a fix. */
+})
 
 function move(n) {
+  if (currentPicture > imageSet.length || currentPicture < 0) {return};
+  // guard clause stops increases so fast that revertPosition()'s listener never hears them
   indexedDots[currentPicture - 1].classList.remove("current_dot");
   imageStrip.style.transition = "transform 0.15s ease-in-out";
   pixelPosition += (n * jumpWidth);
@@ -81,7 +83,7 @@ function mobileSliderNav(touchends) {
     startX < endX ? move(1) : move(-1);
   } else {
     playPause()
-    temporaryPlayPauseButton(); // I'm going to give this a **provisional** pass - it looks like it works on my android. There were some bugs I couldn't replicate. If it doesn't work, and you decide to delete, be aware that there is mobile css styling for #playPause that you should delete also.
+    temporaryPlayPauseButton(); // I'm going to give this a **provisional** pass - it looks like it works on my android. There were some bugs I couldn't replicate. If it doesn't work, and you decide to delete, be aware that there is mobile css styling for #playPause that you should also delete.
   }
 }
 
@@ -114,6 +116,7 @@ function playPause(flag) {
 
 /*
 To-Dos
-TODO: some of the captions don't match up with the images. There's a white space along some top edges, and the left/right edges are not continuous - edited jpegs have fuzzy edges, while rendered boxes have sharp ones. Consider a different style of caption - maybe white.
 TODO: finish work on experimental dot feature??
+TODO: test play pause button on tap feature
+TODO: mobile caption box is too big by approximately 1 line
 */
