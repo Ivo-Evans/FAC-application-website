@@ -115,7 +115,6 @@ q {
 .carousel_images {
   display: flex;
   position: relative;
-
 }
 
 .carousel_images figure {
@@ -146,6 +145,7 @@ q {
   display: flex;
   list-style-type: none;
   padding-left: 0px;
+  margin: 0;
 }
 
 .carousel_dots ul li {
@@ -174,7 +174,13 @@ q {
   transition: all 0.4s ease;
 }
 
-
+.carousel_buttons {
+  min-width: 100%;
+  max-width: 100%;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
 
 /*
 .carousel_images {
