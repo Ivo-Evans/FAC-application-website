@@ -3,7 +3,7 @@ let imageStrip = document.querySelector(".carousel_images");
 let jumpWidth = imageStrip.offsetWidth; // this won't be variable
 let pixelPosition = -jumpWidth;
 imageStrip.style.transform = "translateX(" + -jumpWidth + "px)"
-let currentPicture = 1; // 0 is a looping picture
+let currentPicture = 1; // 0 is a looping picture, as is 9
 let numberOfPictures = imageSet.count
 
 document.getElementById('leftButton').addEventListener('click', () => move(1));
