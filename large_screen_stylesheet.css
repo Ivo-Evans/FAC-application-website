@@ -116,7 +116,6 @@ q {
 .carousel_images {
   display: flex;
   position: relative;
-
 }
 
 .carousel_images figure {
@@ -134,8 +133,8 @@ q {
 .carousel_images img {
   max-width: 100%;
   vertical-align: middle;
+  display: block;
 }
-
 
 .carousel_dots {
   display: flex;
@@ -189,9 +188,14 @@ q {
   max-width: 96%;
   padding: 0 2%;
   color: #242424;
+  opacity: 0.9;
   font-size: 60px;
   display: flex;
-  justify-content: space-between; /* There's a better flexbox property*/
+  justify-content: space-between;
+}
+
+.carousel_buttons i:hover {
+  color: #FFF;
 }
 
 /*

@@ -99,4 +99,6 @@ To-Dos
 TODO: add timer function and play/pause function
 TODO: add time updater
 TODO: style buttons for desktop. Keep dots visible for both desktop and mobile users.
-Finish mobile styling. */
+Finish mobile styling.
+TODO: some of the captions don't match up with the images. There's a white space along some top edges, and the left/right edges are not continuous - edited jpegs have fuzzy edges, while rendered boxes have sharp ones. Consider a different style of caption - maybe white. 
+*/
