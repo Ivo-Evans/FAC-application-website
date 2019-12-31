@@ -151,15 +151,13 @@ footer img {
 .carousel_dots button {
   border-radius: 50%;
   border-width: 0px;
-  background-color: #242424;
-  opacity: 0.8;
+  background-color: #DBDBDB;
   outline: none;
   height: 12px;
 }
 
 .carousel_dots .current_dot {
-  background-color: #242424; /*TODO: consider lightening this. If so, do it uniformly across stylesheets */
-  opacity: 0.5;
+  background-color: #636363; /*TODO: consider lightening this. If so, do it uniformly across stylesheets */
   transition: all 0.4s ease;
 }
 

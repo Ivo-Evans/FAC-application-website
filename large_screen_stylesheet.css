@@ -156,22 +156,19 @@ q {
 .carousel_dots button {
   border-radius: 50%;
   border-width: 0px;
-  background-color: #242424;
-  opacity: 0.8;
+  background-color: #DBDBDB;
   outline: none;
   height: 12px;
   width: 2px;
 }
 
 .carousel_dots button:hover {
-  background-color: #242424;
-  opacity: 0.5;
+  background-color: #969696;
   transition: all 0.15s ease;
 }
 
 .carousel_dots .current_dot {
-  background-color: #242424;
-  opacity: 0.5;
+  background-color: #636363;
   transition: all 0.4s ease;
 }
 
@@ -195,7 +192,7 @@ q {
 }
 
 .carousel_buttons i:hover {
-  color: #FFF;
+  color: #E0E0E0;
 }
 
 /*
