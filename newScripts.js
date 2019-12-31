@@ -1,10 +1,16 @@
 let imageSet = document.querySelectorAll(".image");
 let imageStrip = document.querySelector(".carousel_images");
 let jumpWidth = imageStrip.offsetWidth; // this won't be variable
-let pixelPosition = 0;
-let currentPicture = 0;
+let pixelPosition = -jumpWidth;
+imageStrip.style.transform = "translateX(" + -jumpWidth + "px)"
+let currentPicture = 1; // 0 is a looping picture
 let numberOfPictures = imageSet.count
-move(-1); // this is ad-hoc, clearly. Perhaps declare variables, then assign them on load. At the same time as assignment, call imageStrip.style.transform yada yada yada. There should also be an onresize handler which calls move(0) and reassigns some variables.
+// move(-1); // this is ad-hoc, clearly. Perhaps declare variables, then assign them on load. At the same time as assignment, call imageStrip.style.transform yada yada yada. There should also be an onresize handler which calls move(0) and reassigns some variables.
+
+document.getElementById('leftButton').addEventListener('click', () => move(1));
+document.getElementById('rightButton').addEventListener('click', () => move(-1));
+
+
 
 function move(n) {
   imageStrip.style.transition = "transform 0.15s ease-in-out";
@@ -29,7 +35,6 @@ function revertPosition() {
 }
 
 imageStrip.addEventListener('transitionend', revertPosition);
-
 
 
 // function comboTest() {
