@@ -89,6 +89,7 @@ function mobileSliderNav(touchends) {
     startX < endX ? move(1) : move(-1);
   } else {
     // playPause()
+    // pause button flash and remove after a certain amount of time??
   }
 }
 
@@ -96,8 +97,6 @@ function mobileSliderNav(touchends) {
 /*
 To-Dos
 TODO: add timer function and play/pause function
-TODO: enable swipe controls. Keep them simple this time, allow pause. Maybe cause pause button to flash on screen after pause
 TODO: add time updater
 TODO: style buttons for desktop. Keep dots visible for both desktop and mobile users.
-TODO: add left/right arrow key controls
 */
