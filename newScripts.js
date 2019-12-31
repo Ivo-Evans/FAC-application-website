@@ -21,6 +21,15 @@ document.getElementById('leftButton').addEventListener('click', () => move(1));
 document.getElementById('rightButton').addEventListener('click', () => move(-1));
 imageStrip.addEventListener('transitionend', revertPosition);
 document.body.querySelector(".carousel_dots").addEventListener('click', dotNav);
+window.addEventListener('keydown', (keypress) => {
+  if (keypress.key == "ArrowLeft") {move(1)}
+  if (keypress.key == "ArrowRight") {move(-1)}
+  // if (keypress.key == " ") {
+  //   keypress.preventDefault();
+  //   // play pause function
+  // }
+}) /*TODO: currently, holding this down scrolls super fast, faster than the loop updates. Either make this a keyup event, thus precluding scrolling, or find that youtube video containing a fix. */
+
 
 
 function move(n) {
@@ -71,7 +80,7 @@ function dotNav(event) {
 To-Dos
 TODO: add timer function and play/pause function
 TODO: enable swipe controls. Keep them simple this time, allow pause. Maybe cause pause button to flash on screen after pause
-TODO: captions. You can do it the same way you did it last time, or maybe have them scroll through, pre-attached to their image?? each image could be a separate div?? could be a bit of a drag, a bit of a div pasta...
 TODO: add time updater
 TODO: style buttons for desktop. Keep dots visible for both desktop and mobile users.
+TODO: add left/right arrow key controls
 */
