@@ -2,9 +2,8 @@
 
 let imageSet = document.querySelectorAll(".image");
 let imageStrip = document.querySelector(".carousel_images"); // this updates intelligently
-let jumpWidth = imageStrip.offsetWidth; // this won't be variable
-let pixelPosition = -jumpWidth;
-// imageStrip.style.transform = "translateX(" + -jumpWidth + "px)"
+let jumpWidth
+let pixelPosition
 let currentPicture = 1; // 0 is a looping picture, as is 9
 let numberOfPictures = imageSet.count // still haven't actually used this....
 
@@ -67,18 +66,12 @@ function dotNav(event) {
 }
 
 
-// currently, resize really messes things up. I see two problems (there may be more). Firstly, the image on the screen goes to the wrong place instantly on resize. Secondly, I think, image distance needs to be recalibrated. One thing you could do is assign all your variables on load, and assign them all on resize, and call move(0) on resize.
-
-
 
 /*
 To-Dos
-TODO: try to nip resize issues in the bud
 TODO: add timer function and play/pause function
 TODO: enable swipe controls. Keep them simple this time, allow pause. Maybe cause pause button to flash on screen after pause
 TODO: captions. You can do it the same way you did it last time, or maybe have them scroll through, pre-attached to their image?? each image could be a separate div?? could be a bit of a drag, a bit of a div pasta...
 TODO: add time updater
 TODO: style buttons for desktop. Keep dots visible for both desktop and mobile users.
-
-
 */

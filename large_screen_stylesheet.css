@@ -120,6 +120,11 @@ q {
 
 }
 
+.carousel_images figure {
+  min-width: 100%;
+  margin: 0;
+}
+
 .carousel_images img {
   max-width: 100%;
 }
