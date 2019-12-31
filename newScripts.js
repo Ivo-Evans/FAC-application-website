@@ -81,7 +81,7 @@ function mobileSliderNav(touchends) {
     startX < endX ? move(1) : move(-1);
   } else {
     playPause()
-    temporaryPlayPauseButton(); // I'm going to give this a **provisional** pass - it looks like it works on my android. There were some bugs I couldn't replicate. If it doesn't work, and you decide to delete, be aware that there is css styling for #playPause that you should delete also. 
+    temporaryPlayPauseButton(); // I'm going to give this a **provisional** pass - it looks like it works on my android. There were some bugs I couldn't replicate. If it doesn't work, and you decide to delete, be aware that there is mobile css styling for #playPause that you should delete also.
   }
 }
 
