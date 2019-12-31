@@ -109,9 +109,7 @@ q {
 .carousel {
   max-width: 100%;
   overflow-x: hidden;
-
-  border: 5px;
-  border-style: solid;
+  /* background-color: #000; */
 }
 
 .carousel_images {
@@ -125,8 +123,17 @@ q {
   margin: 0;
 }
 
+.carousel_images figcaption {
+  background-color: #000; /* TODO: put this as background of entire carousel. Style dots as whites that become grey. Maybe. Maybe make dot-background white and min-width 100%*/
+  font-size: 11px;
+  color: #FFF;
+  padding: 2px;
+}
+
+
 .carousel_images img {
   max-width: 100%;
+  vertical-align: middle;
 }
 
 
