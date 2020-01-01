@@ -94,6 +94,7 @@ footer img {
 
 /* carousel stuff */
 
+
 .carousel {
   max-width: 100%; /* TODO: work out why you're using both max and min here. min seems effective for mobile, max for desktop */
   min-width: 100%;
@@ -123,6 +124,14 @@ footer img {
 .carousel_images img {
   max-width: 100%;
   vertical-align: middle;
+}
+
+#leftButton {
+  display: none;
+}
+
+#rightButton {
+  display: none;
 }
 
 #playPause {
