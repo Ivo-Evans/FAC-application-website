@@ -1,7 +1,7 @@
 'use strict';
 
 let imageSet = document.querySelectorAll(".image");
-let imageStrip = document.querySelector(".carousel_images"); // this updates intelligently
+let imagesHandle = document.querySelector(".carousel_images"); // this updates intelligently
 let jumpWidth
 let pixelPosition
 let currentPicture = 1; // 0 is a looping picture, as is 9
@@ -12,15 +12,15 @@ recalibrate();
 window.addEventListener('resize', recalibrate);
 
 function recalibrate() {
-  jumpWidth = imageStrip.offsetWidth;
+  jumpWidth = imagesHandle.offsetWidth;
   pixelPosition = -(currentPicture * jumpWidth);
-  imageStrip.style.transform = "translateX(" + pixelPosition + "px)"
+  imagesHandle.style.transform = "translateX(" + pixelPosition + "px)"
 }
 
 
 document.getElementById('leftButton').addEventListener('click', () => move(1));
 document.getElementById('rightButton').addEventListener('click', () => move(-1));
-imageStrip.addEventListener('transitionend', revertPosition);
+imagesHandle.addEventListener('transitionend', revertPosition);
 document.body.querySelector(".carousel_dots").addEventListener('click', dotNav);
 window.addEventListener('keydown', (keypress) => {
   if (keypress.key == "ArrowLeft") {move(1)}
@@ -35,10 +35,10 @@ function move(n) {
   if (currentPicture > 8 || currentPicture < 1) {return};
   // guard clause stops increases so fast that revertPosition()'s listener never hears them
   indexedDots[currentPicture - 1].classList.remove("current_dot");
-  imageStrip.style.transition = "transform 0.15s ease-in-out";
+  imagesHandle.style.transition = "transform 0.15s ease-in-out";
   pixelPosition += (n * jumpWidth);
   currentPicture -= n // pixel position increases - goes rightward for every picture decrease - go to an earlier picture
-  imageStrip.style.transform = "translateX(" + pixelPosition + "px)";
+  imagesHandle.style.transform = "translateX(" + pixelPosition + "px)";
 
   try {indexedDots[currentPicture - 1].classList.add("current_dot")}
   catch {n > 0 ? indexedDots[indexedDots.length - 1].classList.add("current_dot")
@@ -48,7 +48,7 @@ function move(n) {
 }
 
 function revertPosition() {
-  imageStrip.style.transition = "none";
+  imagesHandle.style.transition = "none";
   if (currentPicture >= 9) {
     currentPicture = 1;
     pixelPosition = - (jumpWidth);
@@ -56,7 +56,7 @@ function revertPosition() {
     currentPicture = 8;
     pixelPosition -= jumpWidth * 8;
   }
-  imageStrip.style.transform = "translateX(" + pixelPosition + "px)";
+  imagesHandle.style.transform = "translateX(" + pixelPosition + "px)";
 }
 
 function dotNav(event) {
