@@ -34,7 +34,6 @@ window.addEventListener('keydown', (keypress) => {
 function move(n) {
   if (currentPicture > 8 || currentPicture < 1) {return};
   // guard clause stops increases so fast that revertPosition()'s listener never hears them
-  console.log(currentPicture + " " + indexedDots[currentPicture - 1].id);
   indexedDots[currentPicture - 1].classList.remove("current_dot");
   imageStrip.style.transition = "transform 0.15s ease-in-out";
   pixelPosition += (n * jumpWidth);
@@ -106,9 +105,13 @@ let play = setInterval(() => move(-1), 7000); // duration could be shorter if ac
 let playing = true;
 
 function playPause(flag) {
-  if (flag == 'reset' && playing == true) {
+  if (flag == 'reset') {
+    if (playing) {
       clearInterval(play);
       play = setInterval(() => move(-1), 7000);
+    } else {
+      return;
+    }
   } else {
     playing ? clearInterval(play) : play = setInterval(() => move(-1), 7000) ;
     playing = !playing;
