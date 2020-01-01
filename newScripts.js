@@ -32,16 +32,19 @@ window.addEventListener('keydown', (keypress) => {
 })
 
 function move(n) {
-  if (currentPicture > imageSet.length || currentPicture < 0) {return};
+  if (currentPicture > 8 || currentPicture < 1) {return};
   // guard clause stops increases so fast that revertPosition()'s listener never hears them
+  console.log(currentPicture + " " + indexedDots[currentPicture - 1].id);
   indexedDots[currentPicture - 1].classList.remove("current_dot");
   imageStrip.style.transition = "transform 0.15s ease-in-out";
   pixelPosition += (n * jumpWidth);
   currentPicture -= n // pixel position increases - goes rightward for every picture decrease - go to an earlier picture
   imageStrip.style.transform = "translateX(" + pixelPosition + "px)";
+
   try {indexedDots[currentPicture - 1].classList.add("current_dot")}
   catch {n > 0 ? indexedDots[indexedDots.length - 1].classList.add("current_dot")
       : indexedDots[0].classList.add("current_dot")};
+
   playPause('reset');
 }
 
