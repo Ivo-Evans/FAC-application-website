@@ -106,12 +106,15 @@ q {
 /* carousel stuff */
 .carousel {
   max-width: 100%;
+  min-width: 100%;
   overflow-x: hidden;
   position: relative;
   background-color: #000;
 }
 
 .carousel_images {
+  max-width: 100%;
+  min-width: 100%;
   display: flex;
   position: relative;
 }
@@ -131,7 +134,6 @@ q {
 .carousel_images img {
   max-width: 100%;
   vertical-align: middle;
-  display: block;
 }
 
 .carousel_dots {
@@ -148,7 +150,7 @@ q {
 }
 
 .carousel_dots ul li {
-  padding: 10px;
+  padding: 10px  ;
 }
 
 .carousel_dots button {
@@ -157,7 +159,6 @@ q {
   background-color: #DBDBDB;
   outline: none;
   height: 12px;
-  width: 2px;
 }
 
 .carousel_dots button:hover {
