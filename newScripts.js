@@ -124,5 +124,4 @@ function playPause(flag) {
 To-Dos
 TODO: finish work on experimental dot feature??
 TODO: test play pause button on tap feature
-TODO: mobile caption box is too big by approximately 1 line
 */
