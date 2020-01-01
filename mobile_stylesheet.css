@@ -1,8 +1,6 @@
 :root {
-  scroll-behavior: smooth; /* Remember to add a section break div at the end, so the browser can scroll far enough
-  n.b. that, apparently, there are some js functions like window.scroll that do this. Maybe you could use them, to introduce a 'rush' effect. See this site: https://css-tricks.com/snippets/jquery/smooth-scrolling/*/
+  scroll-behavior: smooth;
   font-family: 'Roboto Mono', monospace;
-  /* overflow: hidden; */ /* You should disable scrolling only for very-big screens */
 }
 
 .left_sidebar_static {
@@ -73,7 +71,7 @@ header {
 }
 
 section {
-  margin-left: 40px; /*Maybe this is the offender for your ul not being as far left as you'd like*/
+  margin-left: 40px;
   margin-bottom: 20vh;
 }
 
@@ -95,3 +93,73 @@ footer img {
 }
 
 /* carousel stuff */
+
+.carousel {
+  max-width: 100%; /* TODO: work out why you're using both max and min here. min seems effective for mobile, max for desktop */
+  min-width: 100%;
+  overflow-x: hidden;
+  background-color: #000;
+  position: relative;
+}
+
+.carousel_images {
+  max-width: 100%;
+  min-width: 100%;
+  display: flex;
+  position: relative;
+}
+
+.carousel_images figure {
+  min-width: 100%;
+  margin: 0;
+}
+
+.carousel_images figcaption {
+  font-size: 10px;
+  color: #FFF;
+  padding: 2px;
+}
+
+.carousel_images img {
+  max-width: 100%;
+  vertical-align: middle;
+}
+
+#playPause {
+  display: none;
+  position: absolute;
+  color: #dedede;
+  opacity: 0.9;
+  font-size: 40px;
+}
+
+.carousel_dots {
+ display: flex;
+ justify-content: center;
+ background-color: #FFF;
+}
+
+.carousel_dots ul {
+  display: flex;
+  list-style-type: none;
+  padding-left: 0px;
+  margin: 0;
+}
+
+.carousel_dots ul li {
+  padding-left: 0px;
+  padding: 4px 8px;
+}
+
+.carousel_dots button {
+  border-radius: 50%;
+  border-width: 0px;
+  background-color: #DBDBDB;
+  outline: none;
+  height: 12px;
+}
+
+.carousel_dots .current_dot {
+  background-color: #636363;
+  transition: all 0.4s ease;
+}

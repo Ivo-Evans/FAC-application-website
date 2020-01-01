@@ -1,8 +1,6 @@
 :root {
-  scroll-behavior: smooth; /* Remember to add a section break div at the end, so the browser can scroll far enough
-  n.b. that, apparently, there are some js functions like window.scroll that do this. Maybe you could use them, to introduce a 'rush' effect. See this site: https://css-tricks.com/snippets/jquery/smooth-scrolling/*/
+  scroll-behavior: smooth;
   font-family: 'Roboto Mono', monospace;
-  /* overflow: hidden; */ /* You should disable scrolling only for very-big screens */
 }
 
 .left_sidebar_static {
@@ -27,7 +25,7 @@
   background-color: #FFF;
   overflow-x: hidden; /* no horizontal scrolling */
   padding-top: 60px; /* so they start below the title */
-} /* You could put common elements of these sidebars into a variable. The question is, how are you going to scale this structure to mobile devices?*/
+}
 
 .left_sidebar_dynamic {
   display: none;
@@ -106,3 +104,89 @@ q {
 
 
 /* carousel stuff */
+.carousel {
+  max-width: 100%;
+  overflow-x: hidden;
+  position: relative;
+  background-color: #000;
+}
+
+.carousel_images {
+  display: flex;
+  position: relative;
+}
+
+.carousel_images figure {
+  min-width: 100%;
+  margin: 0;
+}
+
+.carousel_images figcaption {
+  font-size: 11px;
+  color: #FFF;
+  padding: 2px;
+}
+
+
+.carousel_images img {
+  max-width: 100%;
+  vertical-align: middle;
+  display: block;
+}
+
+.carousel_dots {
+  display: flex;
+  justify-content: center;
+  background-color: #FFF;
+}
+
+.carousel_dots ul {
+  display: flex;
+  list-style-type: none;
+  padding-left: 0px;
+  margin: 0;
+}
+
+.carousel_dots ul li {
+  padding: 10px;
+}
+
+.carousel_dots button {
+  border-radius: 50%;
+  border-width: 0px;
+  background-color: #DBDBDB;
+  outline: none;
+  height: 12px;
+  width: 2px;
+}
+
+.carousel_dots button:hover {
+  background-color: #969696;
+  transition: all 0.15s ease;
+}
+
+.carousel_dots .current_dot {
+  background-color: #636363;
+  transition: all 0.4s ease;
+}
+
+.carousel_buttons {
+  display: none;
+}
+
+.carousel:hover .carousel_buttons{
+  position: absolute;
+  bottom: 50%;
+  min-width: 96%;
+  max-width: 96%;
+  padding: 0 2%;
+  color: #242424;
+  opacity: 0.9;
+  font-size: 60px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.carousel_buttons i:hover {
+  color: #E0E0E0;
+}
