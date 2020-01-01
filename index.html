@@ -114,7 +114,7 @@
       </div>
     </div>
     <section  id="About_me">
-      <img class = "selfie" src="tbilisi_selfie.jpg"/> 
+      <img class = "selfie" src="tbilisi_selfie.jpg"/>
       <h2>Hi, my name is Ivo.</h2>
       <p>Here are some facts about me:</p>
       <ul>
@@ -173,7 +173,15 @@
     <h1>Thanks for reading!</h1>
     <img src="./appropriatelySizedImages/fun photo.jpg" alt="Me and a drunk lady having fun at the bar.">
   </footer>
-  <script src="./scripts.js"></script>
+  <script>
+    function openSideMenu(){
+      document.getElementById('side-menu').style.width = '250px';
+    }
+
+    function closeSideMenu(){
+      document.getElementById('side-menu').style.width = '0';
+    }
+  </script>
   <script src="./newScripts.js"></script>
 </body>
 
