@@ -6,14 +6,14 @@ https://github.com/ievans147/FAC-application-website
 
 ### Responsivity ###
 
-For responsivity I opted for two different stylesheets, with different rules. I think this was quite a good decision: it's true that it makes my code less DRY, but it also makes it cleaner, because I do not have to deal with conflicts between CSS rules. I found I could leave certain rules undefined in one stylesheet or the other, thus giving me more control.
+For responsivity I opted for two different stylesheets, with different rules. I think this was quite a good decision: it makes my code less DRY, but it also makes it cleaner, because I do not have to deal with conflicts between CSS rules. I found I could leave certain rules undefined in one stylesheet or the other, thus giving me more control.
 
 The mobile stylesheet is styled less, but to similar effect. The mobile view features a single, collapsible header, in contrast to the desktop's double, non-collapsible headers. These headers are all separate HTML elements, so there are three headers in the html file. Had I known about CSS grid when writing the website, I probably would have tried to use it.
 
 
 ### Accessibility ###
 
-Luckily, the aesthetic of my website created a lot of colour-contrast. To aid accessibility, I also supplied alt text to images and specified the language. Headers within the main element follow on in size from headers in the header element, but headers in the navbars do not. In general, the navbar system is an area of weakness for accessibility: having three navbars is hard on a screen reader. Perhaps, in the future, I could use CSS grid here.
+Luckily, the aesthetic of my website created a lot of colour-contrast. To aid accessibility, I also supplied alt text to images and specified the language. Headers within the main element follow on in size from headers in the header element and from each other, but headers in the navbars do not. In general, the navbar system is an area of weakness for accessibility: having three navbars is hard on a screen reader. Again, CSS grid might have the answers for future projects.
 
 
 ### Semantic HTML ###
@@ -23,19 +23,20 @@ I tried to use semantic html tags wherever possible, and divs only when there wa
 
 ### Speed ###
 
-I improved load speed using an analysis from https://gtmetrix.com/ . To improve load speed I made sure to serve images which were as small enough as possible while still being consistently high-resolution. I opted to serve them at 2x the size at which they were displayed on a desktop, and this helped a lot.
+I improved load speed using an analysis from https://gtmetrix.com/ . To improve load speed I made sure to serve images which were as small as possible while still being consistently high-resolution. I opted to serve them at 2x the size at which they were displayed on a desktop, and this helped a lot.
 
-I also inlined some JavaScript. I have two distinct scripts in my program, for the image slider and the collapsible navbar, visible only on mobiles. The collapsible navbar uses simple JavaScript, so I inlined it.
+I also inlined some JavaScript. I have two distinct scripts in my program, one for the image slider and one for the collapsible navbar, which is visible only on mobiles. The collapsible navbar uses simple JavaScript, so I inlined it.
 
+I also randomly select my selfie with JavaScript - that's just a bit of fun, but it's in the same script tags as the navbar.
 
 ## The image slider ##
 
 ### The story of my image slider, told in commits ###
 ...is a trilogy.
 
-First, I tried to make an ambitious, CSS heavy image slider in the main repo. The idea was to get a strip of differently sized images, pad each one so that it was the width of the page if and only if necessary, and then pull them from left to right along the page by the same distance. However, at the time, I didn't know enough CSS, and I soon found myself wading through code that I no longer really understood, poking things and hoping the system would magically become fixed.
+First, I tried to make an ambitious, CSS heavy image slider in the main repo. The idea was to get a strip of differently sized images, pad each one so that it was the width of the page if and only if necessary, and then pull them from left to right along the page by the same distance. However, at the time, I didn't know enough CSS, and I soon found myself wading through code I no longer really understood, poking things and hoping the system would magically become fixed.
 
-So I went back to the drawing board, and developed a simpler carousel that switched images from display: none to display: block. I made it in a separate repo, because I didn't want to pollute my commit history with another attempt, and I didn't know how to branch at that point. When it became clear that it was working, I copied it into the main repo, and continued to refine it.
+So I went back to the drawing board, and developed a simpler carousel that switched images from display: none to display: block. I made it in a separate repo, because I didn't want to pollute my commit history with another attempt, and I didn't know how to branch at that point. When I was happy with it, I copied it into the main repo, and continued to refine it.
 
 I learnt a lot making the static navbar. But after I finished it I had no coding to do. I started dreaming of my old slider again - reimagined in the light of my new knowledge. So I set to work. This time, I branched the main repo, and worked there. I used images of specific sizes, so that I didn't have to do any varying padding. I paid attention to the position property and its various values. The result was, I think, quite successful.
 
