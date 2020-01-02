@@ -191,3 +191,41 @@ q {
 .carousel_buttons i:hover {
   color: #E0E0E0;
 }
+
+
+@media screen and (max-width: 1100px) {
+  :root {
+    font-size: 14px;
+  }
+
+  .left_sidebar_static {
+    width: 200px;
+  }
+
+  header {
+    margin-left: 210px; /* sidebar width + .main padding */
+    margin-right: 150px;
+  }
+
+  main {
+    margin-left: 200px; /* this needs to be same as sidebar width. Would it be clever to use a variable here? */
+    margin-right: 150px; /* ibid */
+    padding: 0px 10px;
+  }
+
+  footer {
+    text-align: center;
+    margin-left: 230px; /* this needs to be same as sidebar width. Would it be clever to use a variable here? */
+    margin-right: 130px; /* ibid */
+    padding: 0px 30px;
+  }
+
+  #email {
+    color: red;
+    display: none;
+  }
+
+  .contact_bar {
+    width: 150px;
+  }
+}
