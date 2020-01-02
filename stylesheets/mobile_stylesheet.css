@@ -73,12 +73,12 @@ q {
 }
 
 header {
-  margin-left: 40px;
-  margin-right: 40px;
+  margin-left: 33px;
+  margin-right: 33px;
 }
 
 section {
-  margin-left: 40px;
+  margin-left: 33px;
   margin-bottom: 20vh;
 }
 
@@ -91,7 +91,8 @@ section ul {
 }
 
 footer {
-  margin-left: 40px;
+  margin-left: 33px;
+  margin-right: 33px;
   text-align: center;
 }
 
