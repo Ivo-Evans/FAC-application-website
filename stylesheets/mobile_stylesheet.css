@@ -13,15 +13,10 @@
   width: 25px;
   position: fixed;
   z-index: 2000;
-  position: -webkit-sticky;
-  position: sticky;
-  top: 30px;
 }
 
 .dynamic_hamburger_button svg {
-  position: -webkit-sticky;
-  position: sticky;
-  top: 30px;
+  position: fixed;
   z-index: 2001;
 }
 
