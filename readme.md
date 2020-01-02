@@ -2,34 +2,34 @@ Thanks for checking out my website. I wanted to make a retro looking website wit
 
 ''' https://github.com/ievans147/FAC-application-website '''
 
-###Optimisation###
+### Optimisation ###
 
-####Accessibility####
+#### Accessibility ####
 Luckily, the aesthetic of my website created a lot of colour-contrast. To aid accessibility, I also supplied alt text to images and specified the language. Headers within the main element follow on in size from headers in the header element, but headers in the navbars do not. In general, the navbar system is an area of weakness for accessibility: having three navbars is hard on a screen reader. Perhaps, in the future, I could use CSS grid here. 
 
 
-####Semantic HTML####
+#### Semantic HTML ####
 
 I tried to use semantic html tags wherever possible, and divs only when there was no good semantic equivalent. 
 
 
-####Responsivity####
+#### Responsivity ####
 
 For responsivity I opted for two different stylesheets, with different rules. I think this was quite a good decision: it's true that it makes my code less DRY, but it also makes it cleaner, because I do not have to deal with conflicts between CSS rules. I found I could leave certain rules undefined in one stylesheet or the other, thus giving me more control.
 
 The mobile stylesheet is styled less, but to similar effect. The mobile view features a single, collapsible header, in contrast to the desktop's double, non-collapssible headers. These headers are all separate HTML elements, so there are three headers in the html file. Had I known about CSS grid when writing the website, I probably would have tried to use it. 
 
 
-####Speed####
+#### Speed ####
 
 I improved load speed using an analysis from https://gtmetrix.com/ . To improve load speed I made sure to serve images which were as small enough as possible while still being consistently high-resolution. I opted to serve them at 2x the size at which they were displayed on a desktop, and this helped a lot. 
 
 I also inlined some JavaScript. I have two distinct scripts in my program, for the image slider and the collapsible navbar, visible only on mobiles. The collapsible navbar uses simple JavaScript, so I inlined it. 
 
 
-###The image slider###
+### The image slider ###
 
-####The story of my image slider, told in commits####
+#### The story of my image slider, told in commits ####
 The story of my image slider is a **trilogy**.
 
 First, I tried to make an ambitious, CSS heavy image slider in the main repo. The idea was to get a strip of differently sized images, pad each one so that it was the width of the page if and only if necessary, and then pull them from left to right along the page by the same distance. However, at the time, I didn't know enough CSS, and I soon found myself wading through code that I no longer really understood, poking things and hoping everything would sort itself out. 
@@ -39,12 +39,12 @@ So I went back to the drawing board, and developed a simpler carousel that switc
 I learnt a lot making the static navbar. But after I finished it I had no coding to do. I started dreaming of my old slider again - reimagined in the light of my new knowledge. So I set to work. This time, I branched the main repo, and worked there. I used images of specific sizes, so that I didn't have to do any varying padding. I paid attention to the position property and its various values. The result was, I think, quite successful. 
 
 
-####How it works####
+#### How it works ####
 
 I find it can be difficult to start to get to grips with someone else's code, so I thought I could just describe it. 
 
 
-#####Stage 1: declare measurement variables#####
+##### Stage 1: declare measurement variables #####
 
 The first thing the program does on launch is declare a number of variables. These include
 
@@ -57,7 +57,7 @@ The first thing the program does on launch is declare a number of variables. The
 - playing - a boolean initialised to true, which represents whether the carousel is automatically moving
 
 
-#####Stage 2: stick measurement variables to the state of the window#####
+##### Stage 2: stick measurement variables to the state of the window #####
 
 Something that really bugged me, at the beginning, was that resizing the page threw everything out. 
 
@@ -69,7 +69,7 @@ So I wrote a recalibrate() function, that:
 I call recalibrate once when the script is loaded, and then provide it as a callback to a resize event listener.
 
 
-#####Stage 3: add event listeners and setInterval()#####
+##### Stage 3: add event listeners and setInterval() #####
 
 Three kinds of events predictably cause a left-transition:
 1. press the left arrow icon
@@ -92,7 +92,7 @@ Events also sometimes call back with playPause, which toggles the play setting.
 Finally, there is an event listener registered on transition, which calls revertPosition(). The purpose of this is to create a loop effect by secretly traversing imageSet if the user reaches buffer images 0 or 9. If they reach 9, the image switches to 1, and if they reach 0, it switches to 8.
 
 
-#####Stage 4: the fundamental movement functions#####
+##### Stage 4: the fundamental movement functions #####
 
 move(n) does a number of things
 - It restyles the dots by changing their class
@@ -110,14 +110,14 @@ The second is a try{} catch{} structure. It says that, if the user is trying to 
 The other essential movement function is revertPosition(). If the user is in a buffer image, this adjusts currentPicture and pixelPosition to the image's non-buffer equivalent, then moves them to that position with no transition.
 
 
-#####Stage 5: dot and swipe-based navigation#####
+##### Stage 5: dot and swipe-based navigation #####
 
 dotnav is registered on the div carousel_dots as a click event handler. The click on a specific button bubbles up to the div. If the target of the click is a button, dotNav converts the id, which will be a string "0".."9", into a number representing the jump distance, and calls move() with that number. 
 
 Swipe control uses two event listeners, but first, I declare a variable, startX. The function logStart is the callback of the touchstart event, and records the x-position of the first finger to touch the touchable area to startX. mobileSliderNav() is the callback to touchend. It records endX, and compares startX with endX. If the total distance is less than 10px, the user's touch is registered as a tap, and playPause() is called along with temporaryPlayPauseButton(). If the total distance is longer, move(1) is called if it is negative, and move(-1) is called if it is positive.
 
 
-#####Stage 6: timing methods#####
+##### Stage 6: timing methods #####
 
 playPause() is a two-in-one method. I tried to make it two separate methods, but this caused problems.
 
