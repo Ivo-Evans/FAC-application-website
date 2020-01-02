@@ -120,8 +120,21 @@ function playPause(flag) {
   }
 }
 
+window.addEventListener('load', () => {
+  let iOS = !!navigator.platform && /iPad|iPhone|iPod/.test(navigator.platform);
+  console.log(iOS);
+  if (iOS) {
+    Array.from(indexedDots).forEach(dot => {
+      dot.style.height = "21px";
+      dot.style.width = "21px";
+    })
+  }
+})
+// I can't claim to understand exactly how the code determining the value of iOS works, but I can tell you why I found it on Stack Overflow, and why I put it in here last-minute (plus I do have a basic grasp of the variable). Sizing buttons as circles is a bit finnickity: unless you set a sufficiently high minimum height, they style as ovals. It seems that this minimum height is higher on iPhones than on android, windows Chrome and Mac Safari. Thus, nice small dots on other browsers were stretched on iPhones. To make them circular, I had to enlarge the dots, but I didn't want to do that on all browsers, so I found code to detect the device being used, and enlarged the dots on Iphone only. The ovals actually looked okay, but once I'd found the iOS variable, I thought it was too cool not to put in.
+
+
+
 /*
 To-Dos
 TODO: finish work on experimental dot feature??
-TODO: test play pause button on tap feature
 */
