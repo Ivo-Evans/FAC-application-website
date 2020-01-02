@@ -1,4 +1,4 @@
-Thanks for checking out my website. I wanted to make a retro looking website with lots of sharp corners, block colours and fast transitions, which was nevertheless modern on the inside. I hope you like it. You can find it here:
+Thanks for checking out my website. I wanted to make a retro looking website with lots of sharp corners, block colours and fast transitions, which was nevertheless modern on the inside - a website for programmers. I hope you like it. You can find it here:
 
 https://github.com/ievans147/FAC-application-website
 
