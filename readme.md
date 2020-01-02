@@ -4,20 +4,21 @@ https://github.com/ievans147/FAC-application-website
 
 ## Optimisation ##
 
+### Responsivity ###
+
+For responsivity I opted for two different stylesheets, with different rules. I think this was quite a good decision: it's true that it makes my code less DRY, but it also makes it cleaner, because I do not have to deal with conflicts between CSS rules. I found I could leave certain rules undefined in one stylesheet or the other, thus giving me more control.
+
+The mobile stylesheet is styled less, but to similar effect. The mobile view features a single, collapsible header, in contrast to the desktop's double, non-collapsible headers. These headers are all separate HTML elements, so there are three headers in the html file. Had I known about CSS grid when writing the website, I probably would have tried to use it.
+
+
 ### Accessibility ###
+
 Luckily, the aesthetic of my website created a lot of colour-contrast. To aid accessibility, I also supplied alt text to images and specified the language. Headers within the main element follow on in size from headers in the header element, but headers in the navbars do not. In general, the navbar system is an area of weakness for accessibility: having three navbars is hard on a screen reader. Perhaps, in the future, I could use CSS grid here.
 
 
 ### Semantic HTML ###
 
 I tried to use semantic html tags wherever possible, and divs only when there was no good semantic equivalent.
-
-
-### Responsivity ###
-
-For responsivity I opted for two different stylesheets, with different rules. I think this was quite a good decision: it's true that it makes my code less DRY, but it also makes it cleaner, because I do not have to deal with conflicts between CSS rules. I found I could leave certain rules undefined in one stylesheet or the other, thus giving me more control.
-
-The mobile stylesheet is styled less, but to similar effect. The mobile view features a single, collapsible header, in contrast to the desktop's double, non-collapssible headers. These headers are all separate HTML elements, so there are three headers in the html file. Had I known about CSS grid when writing the website, I probably would have tried to use it.
 
 
 ### Speed ###
@@ -30,9 +31,9 @@ I also inlined some JavaScript. I have two distinct scripts in my program, for t
 ## The image slider ##
 
 ### The story of my image slider, told in commits ###
-The story of my image slider is a **trilogy**.
+...is a trilogy.
 
-First, I tried to make an ambitious, CSS heavy image slider in the main repo. The idea was to get a strip of differently sized images, pad each one so that it was the width of the page if and only if necessary, and then pull them from left to right along the page by the same distance. However, at the time, I didn't know enough CSS, and I soon found myself wading through code that I no longer really understood, poking things and hoping everything would sort itself out.
+First, I tried to make an ambitious, CSS heavy image slider in the main repo. The idea was to get a strip of differently sized images, pad each one so that it was the width of the page if and only if necessary, and then pull them from left to right along the page by the same distance. However, at the time, I didn't know enough CSS, and I soon found myself wading through code that I no longer really understood, poking things and hoping the system would magically become fixed.
 
 So I went back to the drawing board, and developed a simpler carousel that switched images from display: none to display: block. I made it in a separate repo, because I didn't want to pollute my commit history with another attempt, and I didn't know how to branch at that point. When it became clear that it was working, I copied it into the main repo, and continued to refine it.
 
@@ -51,8 +52,8 @@ The first thing the program does on launch is declare a number of variables. The
 - imageSet - a NodeList of images
 - imagesHandle - the div that the first image sits in, and the rest are 'supposed' to sit in
 - jumpWidth - declared but not assigned
-- pixelPosition - position of the imagesHandle - declared but not assigned
-- currentPicture - initialised to 1; images 0 and 9 are duplicates of opposite imgages
+- pixelPosition - position of imagesHandle - declared but not assigned
+- currentPicture - initialised to 1; images 0 and 9 are duplicates of opposite images
 - indexedDots - a NodeList of the dots in the ul that allow navigation
 - playing - a boolean initialised to true, which represents whether the carousel is automatically moving
 
@@ -63,7 +64,7 @@ Something that really bugged me, at the beginning, was that resizing the page th
 
 So I wrote a recalibrate() function, that:
 - defines jumpWidth based on the current width of the page
-- uses currentPicture to assign a value to pixelPosition
+- uses currentPicture and jumpWidth to assign a value to pixelPosition
 - moves imageSet[currentPicture] into the middle of the viewport
 
 I call recalibrate once when the script is loaded, and then provide it as a callback to a resize event listener.
@@ -76,14 +77,14 @@ Three kinds of events predictably cause a left-transition:
 2. press the left keyboard key
 3. Swipe left on a smartphone
 
-Four things cause a right transition:
+Four things cause a right-transition:
 1. The right arrow icon
 2. The right arrow key
 3. Swiping right on a smartphone
 4. setInterval(), and the associated playPause() function
 
 One thing causes a varying transition:
-1. clicking on a dot uses the id of the dot to go to a specific place
+1. clicking on a dot uses the id of the dot to go a specific distance.
 
 All these functions work by calling move(n). A minus value for n represents a rightward movement, because the imagesHandle is dragged back by Math.abs(n) jump widths. A positive value represents a rightward movement, for the same reason.
 
@@ -106,7 +107,7 @@ move(n) does a number of things
 
 There are two kinds of exception handling in this method.
 
-The first is a guard clause. With keydown navigation, it was possible to scroll faster than events could finish, thus interfering with revertPosition(). Now, if the currentPosition is out, move(n) returns prematurely.
+The first is a guard clause. With keydown navigation, it was easy to scroll faster than events could finish, thus interfering with revertPosition(). Now, if the currentPosition is out, move(n) returns prematurely.
 
 The second is a try{} catch{} structure. It says that, if the user is trying to scroll too fast, dot styling should be applied to the first dot if they are trying to move rightward, and the last dot if they are trying to move leftward. I'm not entirely happy with this solution - it does prevent errors, but it means that, during fast scrolling, the dot is always in one place.
 
@@ -129,7 +130,7 @@ playPause() takes a flag argument. The most basic use of playPause is when no fl
 - either assigns a setInterval function to variable play, or deassigns the setInterval function, depending on the value of playing
 - toggles the value of playing
 
-When a flag is provided to playPause, it serves a different purpose. The only accepted flag is 'reset'. playPause('reset') triggers a conditional: if playing, reset the countdown to its original value, 7 seconds; if !playing, do nothing.
+When a flag is provided to playPause, it serves a different purpose. The only accepted flag is 'reset'. playPause('reset') triggers a conditional: if playing, reset the countdown to its original value, 7 seconds; if !playing, return.
 
 As well as playPause, we have temporaryPlayPauseButton. This is designed to help with tap/swipe navigation. The idea is that, when the user taps the screen, a play or pause icon will flash in the center for 2 seconds. In the function, I first calculate the size of image, then style the playPauseButton, which is set to display: none by default, to display: inline. I use the size calculations to put it in the middle of the visible image, and then set a Timeout to set the icon to display: none after 2 seconds.
 
