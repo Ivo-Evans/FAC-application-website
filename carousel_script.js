@@ -122,7 +122,7 @@ function playPause(flag) {
 
 window.addEventListener('load', () => {
   let iOS = !!navigator.platform && /iPad|iPhone|iPod/.test(navigator.platform);
-  console.log(iOS);
+  // I guess the first conjunct ensures that a platform is supplied and the second that it is one of the strings in the regex object. "string".test(null) gives you a TypeError, hence the need for the first conjunct. 
   if (iOS) {
     Array.from(indexedDots).forEach(dot => {
       dot.style.height = "21px";
@@ -130,7 +130,7 @@ window.addEventListener('load', () => {
     })
   }
 })
-// I can't claim to understand exactly how the code determining the value of iOS works, but I can tell you why I found it on Stack Overflow, and why I put it in here last-minute (plus I do have a basic grasp of the variable). Sizing buttons as circles is a bit finnickity: unless you set a sufficiently high minimum height, they style as ovals. It seems that this minimum height is higher on iPhones than on android, windows Chrome and Mac Safari. Thus, nice small dots on other browsers were stretched on iPhones. To make them circular, I had to enlarge the dots, but I didn't want to do that on all browsers, so I found code to detect the device being used, and enlarged the dots on Iphone only. The ovals actually looked okay, but once I'd found the iOS variable, I thought it was too cool not to put in.
+// I found this code on Stack Overflow and included it to fix a bug spotted at the last minute, display on iPhones (I use Android). Sizing buttons as circles is a bit finnickity: unless you set a sufficiently high minimum height, they style as ovals. This minimum height is higher on iPhones than on android, windows Chrome and Mac Safari. Thus, nice small dots on other browsers were stretched on iPhones. To make them circular, I had to enlarge the dots, but I didn't want to do that on all browsers, so I found code to detect the device being used, and enlarged the dots on Iphone only. The ovals actually looked okay, but once I'd found the iOS variable I thought it was too cool not to put in.
 
 
 
