@@ -5,6 +5,7 @@ Thanks for checking out my website. I wanted to make a retro looking website wit
 ###Optimisation###
 
 ####Accessibility####
+Luckily, the aesthetic of my website created a lot of colour-contrast. To aid accessibility, I also supplied alt text to images and specified the language. Headers within the main element follow on in size from headers in the header element, but headers in the navbars do not. In general, the navbar system is an area of weakness for accessibility: having three navbars is hard on a screen reader. Perhaps, in the future, I could use CSS grid here. 
 
 
 ####Semantic HTML####
@@ -14,16 +15,17 @@ I tried to use semantic html tags wherever possible, and divs only when there wa
 
 ####Responsivity####
 
-For responsivity I opted for two different stylesheets, with different rules. I think this was quite a good decision: it's true that it makes my code less DRY, but it also makes it cleaner, because I did not have to deal with conflicts between CSS rules. I found I could leave certain rules undefined in one stylesheet or the other, thus giving me more control.
+For responsivity I opted for two different stylesheets, with different rules. I think this was quite a good decision: it's true that it makes my code less DRY, but it also makes it cleaner, because I do not have to deal with conflicts between CSS rules. I found I could leave certain rules undefined in one stylesheet or the other, thus giving me more control.
 
-The mobile stylesheet is significantly plainer. The mobile view also features a single, collapsible header, in contrast to the desktop's double, non-collapssible headers. These headers are all separate HTML elements, so there are three headers in the html file. Had I known about CSS grid when writing the website, I probably would have tried to use it. 
+The mobile stylesheet is styled less, but to similar effect. The mobile view features a single, collapsible header, in contrast to the desktop's double, non-collapssible headers. These headers are all separate HTML elements, so there are three headers in the html file. Had I known about CSS grid when writing the website, I probably would have tried to use it. 
 
 
 ####Speed####
 
 I improved load speed using an analysis from https://gtmetrix.com/ . To improve load speed I made sure to serve images which were as small enough as possible while still being consistently high-resolution. I opted to serve them at 2x the size at which they were displayed on a desktop, and this helped a lot. 
 
-I also inlined some JavaScript. I have two bits of JavaScript in my program, the image slider and the collapsible navbar, visible only on mobiles. 
+I also inlined some JavaScript. I have two distinct scripts in my program, for the image slider and the collapsible navbar, visible only on mobiles. The collapsible navbar uses simple JavaScript, so I inlined it. 
+
 
 ###The image slider###
 
