@@ -1,187 +1,190 @@
 <!DOCTYPE html>
-<head lang="en">
-  <title>Ivo Evans</title>
-  <!-- Stylesheets: one for large *windows*, one for small (laptop) windows, one for small *devices* (mobiles) -->
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" href="./favicon.ico" type="image/x-icon">
-  <link rel="stylesheet" media="screen and (min-width: 800px)" href="./stylesheets/large_screen_stylesheet.css"/>
-  <link rel="stylesheet" media="screen and (max-width: 800px)" href="./stylesheets/mobile_stylesheet.css" /> <!--TODO: write middle stylesheet. Do this near the end. Middle stylesheet should use mobile navbar but desktop slider. Size boundary for this should be greater than 800, maybe 1100. You could also add a media query or two in the large screens stylesheet to reduce the size of the static sidebars and main div margins before you get to the middle-screen stylesheet. -->
-  <link href="https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap" rel="stylesheet">
-  <script src="https://kit.fontawesome.com/a7798e1ba0.js" crossorigin="anonymous"></script>
-</head>
-<body>
-  <header><h1 id="main_title">Hello World! Come on in...</h1></header>
-  <div class="dynamic_hamburger_button">
-    <a onclick="openSideMenu()">
-      <svg width="25" height="30">
-        <path d="M0,5 25,5" stroke="#000" stroke-width="5"/>
-        <path d="M0,14 25,14" stroke="#000" stroke-width="5"/>
-        <path d="M0,23 25,23" stroke="#000" stroke-width="5"/>
-      </svg>
-    </a>
-  </div>
-  <aside class="left_sidebar_dynamic" id="side-menu">
-    <nav class="left_sidebar_dynamic_top">
-      <a href="#main_title" onclick="closeSideMenu()">Home</a>
-      <a href="#About_me" onclick="closeSideMenu()">About me</a>
-      <a href="#why_Im_applying" onclick="closeSideMenu()">Why I'm applying</a>
-      <a href="#Ruby" onclick="closeSideMenu()">Adventures in Ruby</a>
-      <a href="#notes" onclick="closeSideMenu()">Notes and writings</a>
-    </nav>
-    <nav class="left_sidebar_dynamic_bottom">
-      <a href="https://github.com/ievans147" target="_blank">GitHub</a>
-      <a href="https://www.freecodecamp.org/fcc6941e898" target="_blank">FreeCodeCamp</a>
-      <a href="https://www.codewars.com/users/ievans147" target="_blank">Codewars</a>
-      <a href="mailto:ievans.storrie@gmail.com" target="blank">Email</a>
-    </nav>
-  </aside>
-  <nav class="left_sidebar_static">
-    <a href="#main_title">Home</a>
-    <a href="#About_me">About me</a>
-    <a href="#why_Im_applying">Why I'm applying</a>
-    <a href="#Ruby">Adventures in Ruby</a>
-    <a href="#notes">Notes and writings</a>
-  </nav>
-  <aside class ="contact_bar">
-    <h3 class="contact_header">Find me on:</h3>
-    <p><a href="https://github.com/ievans147" target="_blank">GitHub</a></p>
-    <p><a href="https://www.freecodecamp.org/fcc6941e898" target="_blank">FreeCodeCamp</a></p>
-    <p><a href="https://www.codewars.com/users/ievans147" target="_blank">Codewars</a></p>
-    <p><a href="mailto:ievans.storrie@gmail.com" target="blank">Email</a><br><span id="email">(ievans.storrie@gmail.com)</span></p>
-  </aside>
-  <main>
-    <div class="carousel">
-      <div class="carousel_images">
-        <figure class="image">
-          <img src="./appropriatelySizedImages/7.jpg" alt="Something beautiful">
-          <figcaption>Something beautiful</figcaption>
-        </figure>
-        <figure class="image">
-          <img src="./appropriatelySizedImages/0.jpg" alt="The smallest mosque I've ever seen.">
-          <figcaption>The smallest mosque I've ever seen</figcaption>
-        </figure>
-        <figure class="image">
-          <img src="./appropriatelySizedImages/1.jpg" alt="The Shelter From The Storm (homeless shelter) crew. Haydn, second from the right, graduated FAC and told me about it.">
-          <figcaption>The <i>Shelter From The Storm</i> (homeless shelter) crew. Haydn, second from right, graduated FAC and told me about it.</figcaption>
-        </figure>
-        <figure class="image">
-          <img src="./appropriatelySizedImages/2.jpg" alt="Zeynep delivers toys and clothing to Syrian refugees by bike. Istanbul, Turkey, 2016">
-          <figcaption>Zeynep delivers toys and clothing to Syrian refugees by bike. Istanbul, Turkey, 2016</figcaption>
-        </figure>
-        <figure class="image">
-          <img src="./appropriatelySizedImages/3.jpg" alt="Open Shuhada Street, fight ghost town: a bollard in Hebron, Palestine/Israel, 2016">
-          <figcaption>Open Shuhada Street, fight ghost town: a bollard in Hebron, Palestine/Israel, 2016</figcaption>
-        </figure>
-        <figure class="image">
-          <img src="./appropriatelySizedImages/4.jpg" alt="Somewhere in the West Bank, Palestine, 2016">
-          <figcaption>Somewhere in the West Bank, Palestine, 2016</figcaption>
-        </figure>
-        <figure class="image">
-          <img src="./appropriatelySizedImages/5.jpg" alt="Cycling the kapıdağ peninsula with Yusuf">
-          <figcaption>Cycling the kapıdağ peninsula with Yusuf</figcaption>
-        </figure>
-        <figure class="image">
-          <img src="./appropriatelySizedImages/6.jpg" alt="Afyonkarahısar ('black opium fortress'), Turkey, 2016">
-          <figcaption>Afyonkarahısar ('black opium fortress'), Turkey, 2016</figcaption>
-        </figure>
-        <figure class="image">
-          <img src="./appropriatelySizedImages/7.jpg" alt="Something beautiful">
-          <figcaption>Something beautiful</figcaption>
-        </figure>
-        <figure class="image">
-          <img src="./appropriatelySizedImages/0.jpg" alt="The smallest mosque I've ever seen.">
-          <figcaption>The smallest mosque I've ever seen</figcaption>
-        </figure>
-      </div>
-      <div class="carousel_buttons">
-        <i id="leftButton" class="fas fa-chevron-right fa-flip-horizontal"></i>
-        <i id="playPause" class="fas fa-pause"></i>
-        <i id="rightButton" class="fas fa-chevron-right"></i>
-      </div>
-      <div class="carousel_dots">
-        <ul>
-          <li><button id="1" class="current_dot"></button></li>
-          <li><button id="2"></button></li>
-          <li><button id="3"></button></li>
-          <li><button id="4"></button></li>
-          <li><button id="5"></button></li>
-          <li><button id="6"></button></li>
-          <li><button id="7"></button></li>
-          <li><button id="8"></button></li>
-        </ul>
-      </div>
+<html lang="en">
+  <head>
+    <title>Ivo Evans</title>
+    <!-- Stylesheets: one for large *windows*, one for small (laptop) windows, one for small *devices* (mobiles) -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" href="./favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" media="screen and (min-width: 800px)" href="./stylesheets/large_screen_stylesheet.css"/>
+    <link rel="stylesheet" media="screen and (max-width: 800px)" href="./stylesheets/mobile_stylesheet.css" /> <!--TODO: write middle stylesheet. Do this near the end. Middle stylesheet should use mobile navbar but desktop slider. Size boundary for this should be greater than 800, maybe 1100. You could also add a media query or two in the large screens stylesheet to reduce the size of the static sidebars and main div margins before you get to the middle-screen stylesheet. -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a7798e1ba0.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <header><h1 id="main_title">Hello World! Come on in...</h1></header>
+    <div class="dynamic_hamburger_button">
+      <a onclick="openSideMenu()">
+        <svg width="25" height="30">
+          <path d="M0,5 25,5" stroke="#000" stroke-width="5"/>
+          <path d="M0,14 25,14" stroke="#000" stroke-width="5"/>
+          <path d="M0,23 25,23" stroke="#000" stroke-width="5"/>
+        </svg>
+      </a>
     </div>
-    <section  id="About_me">
-      <img class = "selfie" src="./selfies/tbilisi_selfie.jpg" alt="a selfie"/>
-      <h2>Hi, my name is Ivo.</h2>
-      <p>Here are some facts about me:</p>
-      <ul>
-        <li>I'm 25 years old.</li>
-        <li>I grew up in Dalston, and went to Stoke Newington School, close to Founders and Coders.</li>
-        <li>When I was 21, I lived and studied in Istanbul for a year.</li>
-        <li>At university I discovered rock climbing and it <strong>changed my life for the better</strong>. I  climb at the gym <a href="https://github.com/redwedge/plasticneuron.github.io" target="_blank">plasticneuron</a> used to work at, The Castle, about twice a week, although the two of us are not acquaintances.</li>
-        <li>I work at two music venues, <a title="Bush Hall" href="http://s3-eu-west-1.amazonaws.com/diy-magazine//diy/Artists/J/Julien-Baker/05-06-17-Bush-Hall/20170605213542-Julien-Baker-Ph-CFaruolo.jpg" target="_blank">this one</a> and <a title="Islington Assembly Hall" href="https://www.accesscard.org.uk/wp-content/uploads/2019/10/islingtonassemblyhall3.jpg", target="_blank">this one</a>, as a bartender. One of them recently offered me a promotion to manager, but I turned it down because I wanted to focus on coding (so let's hope this works out!)</li>
-      </ul>
-      <p><a href="https://github.com/ievans147/FAC-application-website" target="_blank">Here</a> is a link to this page's repo. I also did some work on a prototype carousel in <a href="https://github.com/ievans147/static-carousel-test">this</a> repo.</p>
-    </section>
-    <section id="why_Im_applying">
-      <h2>How I came to FAC and why I'm applying</h2>
-      <p>I first heard about Founders and Coders at the homeless shelter I volunteer at on Tuesdays. I had just picked up a book on Ruby, to see whether coding would be something I was interested in. When a FAC alumnus and fellow volunteer, Haydn Appleby, found out, he urged me to apply to FAC. However, because I had just begun coding, I wasn’t sure I was ready or committed. He also advised me to stop learning Ruby and to start learning JavaScript, because there are more JavaScript jobs. I recognised that this was reasonable advice, but I was also aware that a common pitfall, for beginners, was flip-flopping between languages. I did not want to be a quitter, so I logged Haydn's suggestion, and determinedly continued to learn Ruby.</p>
-      <p>At the end of my book, I looked up and considered the possibilities of my future in programming. I realised that at this point, I <em>was</em> committed. I’d proven to myself that I enjoyed coding, and that this wasn't a passing thing. By now I was reading about transistors and ripple-adders in my spare time. I'd made a <a href="#whatsapp_analyser"  >project</a>.</p>
-      <p>I began doing research on bootcamps. Because of Haydn’s recommendation, FAC was one of my first stops, and it stood out for a lot of reasons. I liked the ethos of FAC, its positive aims and its democratic, grassroots origins. I was also interested that FAC has links with Palestine, a place that’s mattered to me since, at 15, I did work experience at the Palestine Solidarity Campaign and, in 2016, visited (to see my then-girlfriend). All in all, FAC sounded like the kind of organisation I wanted to be a part of. This assessment was confirmed when I attended the pre-application coding meetups.</p>
-      <p>In fact, for my whole life, but especially since I graduated from university (in philosophy), I’ve had serious misgivings about my future place in the job market. Unwilling to go straight into a graduate job for a corporation, I began bartending at a music venue, KOKO, to keep myself busy while I made up my mind.</p>
-      <p>Bartending at venues is a fun job, but it's hardly for life. I crave something more intellectually stimulating: something that requires my attention and creativity, and something which is useful. I started at KOKO over a year ago, and since then I've spent some serious time reflecting on my future. I’ve begun to look at social enterprise schemes and, of course, I've begun to code.</p>
-      <p>Coding is a good choice for me for many reasons:</p>
-      <ul>
-        <li>It equips me with specific, specialist skills, which I can use to do work that helps both others and myself.</li>
-        <li>Coding requires creative problem-solving and hard graft in equal measure (like, believe it or not, a philosophy degree).</li>
-        <li>As a programmer, you cannot rest on your laurels. Your job will force you to continue learning, and so, hopefully, will continue to be interesting.</li>
-      </ul>
-    </section>
-    <section  id="Ruby">
-      <h2>Adventures in Ruby</h2>
-      <p>Before applying to Founders and Coders I was learning Ruby. Here are some of the things I worked on:</p>
-      <h3 class="project_title"><a href="https://github.com/ievans147/alarm-clock/blob/master/alarm_clock.rb" target="-blank">Alarm clock</a></h3>
-      <p>I made this after asking a friend what programs he needed on his computer. It didn’t take me much more than an hour, but I enjoyed making it. I like how it forced me to use and abuse Ruby’s kernel features, like while-loops and the bell terminal output. The alarm clock is a bit ‘hacky’ - there's no multithreading here - and I'm proud of it. It required creativity.</p>
-      <h3 class="project_title"><a href="https://github.com/ievans147/web-guesser" target="_blank">Web Guesser</a></h3>
-      <p>This was an experiment in Sinatra, a Web Application Framework for Ruby, which I completed as I was finishing <a href="https://learnrubythehardway.org/book/preface.html" target="_blank">Learn Ruby the Hard Way</a> and just before I expressed interest in Founders and Coders. I followed a tutorial from <a href="http://tutorials.jumpstartlab.com/projects/web_guesser.html" target="_blank">JumpStartLabs</a>.
-      <h3 class="project_title" id="whatsapp_analyser"><a href="https://github.com/ievans147/WhatsApp-Analyser" target="_blank">WhatsApp analyser</a></h3>
-      <p class="testimonial"><q>Wow Ivo, this could really save a relationship</q></p><!--<br>My girlfriend</p>-->
-      <p>I'm not sure it's going to save any relationships, but the WhatsApp analyser <i>is</i> the most ambitious project I've worked on - It's currently over 500 lines long. I tried to make it as DRY as possible, and I think I did an okay job. It takes a WhatsApp chat, parses it, analyses it according to 17 metrics, and plots/tabulates the data in a GUI. It's working well for every chat I've thrown at it, but, as ever, more could be done! There are some TODOs at the top of <a href="https://github.com/ievans147/WhatsApp-Analyser/blob/master/analyser.rb" target="_blank">analyser.rb</a> if you're curious. There is also a <a href="https://github.com/ievans147/WhatsApp-Analyser/blob/master/readme.md" target="_blank">readme</a> and a <a href="https://github.com/ievans147/WhatsApp-Analyser/blob/master/description-of-execution.md" target="_blank">simplified description of its execution</a>. Go wherever - if anywhere - your interest takes you.</p>
-    </section>
-    <section  id="notes">
-      <h2>Notes and Writings</h2>
-      <h3 class="project_title"><a href="https://github.com/ievans147/Notes-and-writings" target="_blank">Notes on specific languages</a></h3>
-      <p>I like to take detailed and modular notes when I'm learning a (programming/markup/style) language. For my JavaScript notes, I am indebted to <a href="https://eloquentjavascript.net/" target="_blank">Eloquent JavaScript</a>, a book that I've found helpful along with freeCodeCamp. At time of writing I've read chapters 1-5 and 13-15 - and I plan to keep going!</p>
-      <p> My notes use MS word because of its collapsible header features - press ^F to find a table of contents. If you want to copy-and-paste code examples, you must manually change " or ' symbols.</p>
-      <ul>
-        <li><a href="https://github.com/ievans147/Notes-and-writings/raw/master/JS.docx" target="_blank">JavaScript</a></li>
-        <li><a href="https://github.com/ievans147/Notes-and-writings/raw/master/Ruby.docx">Ruby</a></li>
-        <li><a href="https://github.com/ievans147/Notes-and-writings/raw/master/HTML.docx" target="_blank">HTML</a></li>
-        <li><a href="https://github.com/ievans147/Notes-and-writings/raw/master/CSS.docx" target="_blank">CSS</a></li>
-      </ul>
-      <h3 class="project_title"><a href="https://github.com/ievans147/Notes-and-writings/raw/master/data%20types%20doc.docx">Data-types in Ruby: a lesson for the beginner</a></h3>
-      <p>This is a short article I wrote to explain intermediate concepts like encapsulation, classes and objects to beginners via the familiar concept of a data-type. I didn't publish it because, to be perfectly honest, I'm not qualified to (it is also just a first-draft). Nevertheless I think that it's an interesting read.</p>
-      <p>Note that it's written from a 'Ruby' perspective that doesn't make so much sense from a JavaScript one. For instance in Ruby, although people regularly say 'everything is an object', they categorically do not include methods in that statement. The JavaScript saying, by contrast, is 'functions are first-class citizens'. Because JavaScript is not a fully object-oriented language, it would be problematic to use it as an example of OOP concepts.</p>
-      <h3 class="project_title"><a href="https://github.com/ievans147/Notes-and-writings/raw/master/Faking%20it%20Till%20You%20Make%20it%20With%20Git%20and%20GitHub.docx">Faking it Till You Make It With Git and GitHub</a></h3>
-      <p>This is a cheat-sheet I wrote for using Git and GitHub from the command line. I followed <a href="https://launchschool.com/books/git" target="_blank"> this short book</a>.</p>
-    </section>
-  </main>
-  <footer>
-    <h1>Thanks for reading!</h1>
-    <img src="./appropriatelySizedImages/fun photo.jpg" alt="Me and a drunk lady having fun at the bar.">
-  </footer>
-  <script>
-    function openSideMenu(){
-      document.getElementById('side-menu').style.width = '250px';
-    }
+    <aside class="left_sidebar_dynamic" id="side-menu">
+      <nav class="left_sidebar_dynamic_top">
+        <a href="#main_title" onclick="closeSideMenu()">Home</a>
+        <a href="#About_me" onclick="closeSideMenu()">About me</a>
+        <a href="#why_Im_applying" onclick="closeSideMenu()">Why I'm applying</a>
+        <a href="#Ruby" onclick="closeSideMenu()">Adventures in Ruby</a>
+        <a href="#notes" onclick="closeSideMenu()">Notes and writings</a>
+      </nav>
+      <nav class="left_sidebar_dynamic_bottom">
+        <a href="https://github.com/ievans147" target="_blank">GitHub</a>
+        <a href="https://www.freecodecamp.org/fcc6941e898" target="_blank">FreeCodeCamp</a>
+        <a href="https://www.codewars.com/users/ievans147" target="_blank">Codewars</a>
+        <a href="mailto:ievans.storrie@gmail.com" target="blank">Email</a>
+      </nav>
+    </aside>
+    <nav class="left_sidebar_static">
+      <a href="#main_title">Home</a>
+      <a href="#About_me">About me</a>
+      <a href="#why_Im_applying">Why I'm applying</a>
+      <a href="#Ruby">Adventures in Ruby</a>
+      <a href="#notes">Notes and writings</a>
+    </nav>
+    <aside class ="contact_bar">
+      <h3 class="contact_header">Find me on:</h3>
+      <p><a href="https://github.com/ievans147" target="_blank">GitHub</a></p>
+      <p><a href="https://www.freecodecamp.org/fcc6941e898" target="_blank">FreeCodeCamp</a></p>
+      <p><a href="https://www.codewars.com/users/ievans147" target="_blank">Codewars</a></p>
+      <p><a href="mailto:ievans.storrie@gmail.com" target="blank">Email</a><br><span id="email">(ievans.storrie@gmail.com)</span></p>
+    </aside>
+    <main>
+      <div class="carousel">
+        <div class="carousel_images">
+          <figure class="image">
+            <img src="./appropriatelySizedImages/7.jpg" alt="Something beautiful">
+            <figcaption>Something beautiful</figcaption>
+          </figure>
+          <figure class="image">
+            <img src="./appropriatelySizedImages/0.jpg" alt="The smallest mosque I've ever seen.">
+            <figcaption>The smallest mosque I've ever seen</figcaption>
+          </figure>
+          <figure class="image">
+            <img src="./appropriatelySizedImages/1.jpg" alt="The Shelter From The Storm (homeless shelter) crew. Haydn, second from the right, graduated FAC and told me about it.">
+            <figcaption>The <i>Shelter From The Storm</i> (homeless shelter) crew. Haydn, second from right, graduated FAC and told me about it.</figcaption>
+          </figure>
+          <figure class="image">
+            <img src="./appropriatelySizedImages/2.jpg" alt="Zeynep delivers toys and clothing to Syrian refugees by bike. Istanbul, Turkey, 2016">
+            <figcaption>Zeynep delivers toys and clothing to Syrian refugees by bike. Istanbul, Turkey, 2016</figcaption>
+          </figure>
+          <figure class="image">
+            <img src="./appropriatelySizedImages/3.jpg" alt="Open Shuhada Street, fight ghost town: a bollard in Hebron, Palestine/Israel, 2016">
+            <figcaption>Open Shuhada Street, fight ghost town: a bollard in Hebron, Palestine/Israel, 2016</figcaption>
+          </figure>
+          <figure class="image">
+            <img src="./appropriatelySizedImages/4.jpg" alt="Somewhere in the West Bank, Palestine, 2016">
+            <figcaption>Somewhere in the West Bank, Palestine, 2016</figcaption>
+          </figure>
+          <figure class="image">
+            <img src="./appropriatelySizedImages/5.jpg" alt="Cycling the kapıdağ peninsula with Yusuf">
+            <figcaption>Cycling the kapıdağ peninsula with Yusuf</figcaption>
+          </figure>
+          <figure class="image">
+            <img src="./appropriatelySizedImages/6.jpg" alt="Afyonkarahısar ('black opium fortress'), Turkey, 2016">
+            <figcaption>Afyonkarahısar ('black opium fortress'), Turkey, 2016</figcaption>
+          </figure>
+          <figure class="image">
+            <img src="./appropriatelySizedImages/7.jpg" alt="Something beautiful">
+            <figcaption>Something beautiful</figcaption>
+          </figure>
+          <figure class="image">
+            <img src="./appropriatelySizedImages/0.jpg" alt="The smallest mosque I've ever seen.">
+            <figcaption>The smallest mosque I've ever seen</figcaption>
+          </figure>
+        </div>
+        <div class="carousel_buttons">
+          <i id="leftButton" class="fas fa-chevron-right fa-flip-horizontal"></i>
+          <i id="playPause" class="fas fa-pause"></i>
+          <i id="rightButton" class="fas fa-chevron-right"></i>
+        </div>
+        <div class="carousel_dots">
+          <ul>
+            <li><button id="1" class="current_dot"></button></li>
+            <li><button id="2"></button></li>
+            <li><button id="3"></button></li>
+            <li><button id="4"></button></li>
+            <li><button id="5"></button></li>
+            <li><button id="6"></button></li>
+            <li><button id="7"></button></li>
+            <li><button id="8"></button></li>
+          </ul>
+        </div>
+      </div>
+      <section  id="About_me">
+        <img class = "selfie" src="./selfies/tbilisi_selfie.jpg" alt="a selfie"/>
+        <h2>Hi, my name is Ivo.</h2>
+        <p>Here are some facts about me:</p>
+        <ul>
+          <li>I'm 25 years old.</li>
+          <li>I grew up in Dalston, and went to Stoke Newington School, close to Founders and Coders.</li>
+          <li>When I was 21, I lived and studied in Istanbul for a year.</li>
+          <li>At university I discovered rock climbing and it <strong>changed my life for the better</strong>. I  climb at the gym <a href="https://github.com/redwedge/plasticneuron.github.io" target="_blank">plasticneuron</a> used to work at, The Castle, about twice a week, although the two of us are not acquaintances.</li>
+          <li>I work at two music venues, <a title="Bush Hall" href="http://s3-eu-west-1.amazonaws.com/diy-magazine//diy/Artists/J/Julien-Baker/05-06-17-Bush-Hall/20170605213542-Julien-Baker-Ph-CFaruolo.jpg" target="_blank">this one</a> and <a title="Islington Assembly Hall" href="https://www.accesscard.org.uk/wp-content/uploads/2019/10/islingtonassemblyhall3.jpg", target="_blank">this one</a>, as a bartender. One of them recently offered me a promotion to manager, but I turned it down because I wanted to focus on coding (so let's hope this works out!)</li>
+        </ul>
+        <p><a href="https://github.com/ievans147/FAC-application-website" target="_blank">Here</a> is a link to this page's repo. I also did some work on a prototype carousel in <a href="https://github.com/ievans147/static-carousel-test">this</a> repo.</p>
+      </section>
+      <section id="why_Im_applying">
+        <h2>How I came to FAC and why I'm applying</h2>
+        <p>I first heard about Founders and Coders at the homeless shelter I volunteer at on Tuesdays. I had just picked up a book on Ruby, to see whether coding would be something I was interested in. When a FAC alumnus and fellow volunteer, Haydn Appleby, found out, he urged me to apply to FAC. However, because I had just begun coding, I wasn’t sure I was ready or committed. He also advised me to stop learning Ruby and to start learning JavaScript, because there are more JavaScript jobs. I recognised that this was reasonable advice, but I was also aware that a common pitfall, for beginners, was flip-flopping between languages. I did not want to be a quitter, so I logged Haydn's suggestion, and determinedly continued to learn Ruby.</p>
+        <p>At the end of my book, I looked up and considered the possibilities of my future in programming. I realised that at this point, I <em>was</em> committed. I’d proven to myself that I enjoyed coding, and that this wasn't a passing thing. By now I was reading about transistors and ripple-adders in my spare time. I'd made a <a href="#whatsapp_analyser"  >project</a>.</p>
+        <p>I began doing research on bootcamps. Because of Haydn’s recommendation, FAC was one of my first stops, and it stood out for a lot of reasons. I liked the ethos of FAC, its positive aims and its democratic, grassroots origins. I was also interested that FAC has links with Palestine, a place that’s mattered to me since, at 15, I did work experience at the Palestine Solidarity Campaign and, in 2016, visited (to see my then-girlfriend). All in all, FAC sounded like the kind of organisation I wanted to be a part of. This assessment was confirmed when I attended the pre-application coding meetups.</p>
+        <p>In fact, for my whole life, but especially since I graduated from university (in philosophy), I’ve had serious misgivings about my future place in the job market. Unwilling to go straight into a graduate job for a corporation, I began bartending at a music venue, KOKO, to keep myself busy while I made up my mind.</p>
+        <p>Bartending at venues is a fun job, but it's hardly for life. I crave something more intellectually stimulating: something that requires my attention and creativity, and something which is useful. I started at KOKO over a year ago, and since then I've spent some serious time reflecting on my future. I’ve begun to look at social enterprise schemes and, of course, I've begun to code.</p>
+        <p>Coding is a good choice for me for many reasons:</p>
+        <ul>
+          <li>It equips me with specific, specialist skills, which I can use to do work that helps both others and myself.</li>
+          <li>Coding requires creative problem-solving and hard graft in equal measure (like, believe it or not, a philosophy degree).</li>
+          <li>As a programmer, you cannot rest on your laurels. Your job will force you to continue learning, and so, hopefully, will continue to be interesting.</li>
+        </ul>
+      </section>
+      <section  id="Ruby">
+        <h2>Adventures in Ruby</h2>
+        <p>Before applying to Founders and Coders I was learning Ruby. Here are some of the things I worked on:</p>
+        <h3 class="project_title"><a href="https://github.com/ievans147/alarm-clock/blob/master/alarm_clock.rb" target="-blank">Alarm clock</a></h3>
+        <p>I made this after asking a friend what programs he needed on his computer. It didn’t take me much more than an hour, but I enjoyed making it. I like how it forced me to use and abuse Ruby’s kernel features, like while-loops and the bell terminal output. The alarm clock is a bit ‘hacky’ - there's no multithreading here - and I'm proud of it. It required creativity.</p>
+        <h3 class="project_title"><a href="https://github.com/ievans147/web-guesser" target="_blank">Web Guesser</a></h3>
+        <p>This was an experiment in Sinatra, a Web Application Framework for Ruby, which I completed as I was finishing <a href="https://learnrubythehardway.org/book/preface.html" target="_blank">Learn Ruby the Hard Way</a> and just before I expressed interest in Founders and Coders. I followed a tutorial from <a href="http://tutorials.jumpstartlab.com/projects/web_guesser.html" target="_blank">JumpStartLabs</a>.
+        <h3 class="project_title" id="whatsapp_analyser"><a href="https://github.com/ievans147/WhatsApp-Analyser" target="_blank">WhatsApp analyser</a></h3>
+        <p class="testimonial"><q>Wow Ivo, this could really save a relationship</q></p><!--<br>My girlfriend</p>-->
+        <p>I'm not sure it's going to save any relationships, but the WhatsApp analyser <i>is</i> the most ambitious project I've worked on - It's currently over 500 lines long. I tried to make it as DRY as possible, and I think I did an okay job. It takes a WhatsApp chat, parses it, analyses it according to 17 metrics, and plots/tabulates the data in a GUI. It's working well for every chat I've thrown at it, but, as ever, more could be done! There are some TODOs at the top of <a href="https://github.com/ievans147/WhatsApp-Analyser/blob/master/analyser.rb" target="_blank">analyser.rb</a> if you're curious. There is also a <a href="https://github.com/ievans147/WhatsApp-Analyser/blob/master/readme.md" target="_blank">readme</a> and a <a href="https://github.com/ievans147/WhatsApp-Analyser/blob/master/description-of-execution.md" target="_blank">simplified description of its execution</a>. Go wherever - if anywhere - your interest takes you.</p>
+      </section>
+      <section  id="notes">
+        <h2>Notes and Writings</h2>
+        <h3 class="project_title"><a href="https://github.com/ievans147/Notes-and-writings" target="_blank">Notes on specific languages</a></h3>
+        <p>I like to take detailed and modular notes when I'm learning a (programming/markup/style) language. For my JavaScript notes, I am indebted to <a href="https://eloquentjavascript.net/" target="_blank">Eloquent JavaScript</a>, a book that I've found helpful along with freeCodeCamp. At time of writing I've read chapters 1-5 and 13-15 - and I plan to keep going!</p>
+        <p> My notes use MS word because of its collapsible header features - press ^F to find a table of contents. If you want to copy-and-paste code examples, you must manually change " or ' symbols.</p>
+        <ul>
+          <li><a href="https://github.com/ievans147/Notes-and-writings/raw/master/JS.docx" target="_blank">JavaScript</a></li>
+          <li><a href="https://github.com/ievans147/Notes-and-writings/raw/master/Ruby.docx">Ruby</a></li>
+          <li><a href="https://github.com/ievans147/Notes-and-writings/raw/master/HTML.docx" target="_blank">HTML</a></li>
+          <li><a href="https://github.com/ievans147/Notes-and-writings/raw/master/CSS.docx" target="_blank">CSS</a></li>
+        </ul>
+        <h3 class="project_title"><a href="https://github.com/ievans147/Notes-and-writings/raw/master/data%20types%20doc.docx">Data-types in Ruby: a lesson for the beginner</a></h3>
+        <p>This is a short article I wrote to explain intermediate concepts like encapsulation, classes and objects to beginners via the familiar concept of a data-type. I didn't publish it because, to be perfectly honest, I'm not qualified to (it is also just a first-draft). Nevertheless I think that it's an interesting read.</p>
+        <p>Note that it's written from a 'Ruby' perspective that doesn't make so much sense from a JavaScript one. For instance in Ruby, although people regularly say 'everything is an object', they categorically do not include methods in that statement. The JavaScript saying, by contrast, is 'functions are first-class citizens'. Because JavaScript is not a fully object-oriented language, it would be problematic to use it as an example of OOP concepts.</p>
+        <h3 class="project_title"><a href="https://github.com/ievans147/Notes-and-writings/raw/master/Faking%20it%20Till%20You%20Make%20it%20With%20Git%20and%20GitHub.docx">Faking it Till You Make It With Git and GitHub</a></h3>
+        <p>This is a cheat-sheet I wrote for using Git and GitHub from the command line. I followed <a href="https://launchschool.com/books/git" target="_blank"> this short book</a>.</p>
+      </section>
+    </main>
+    <footer>
+      <h1>Thanks for reading!</h1>
+      <img src="./appropriatelySizedImages/fun photo.jpg" alt="Me and a drunk lady having fun at the bar.">
+    </footer>
+    <script>
+      function openSideMenu(){
+        document.getElementById('side-menu').style.width = '250px';
+      }
 
-    function closeSideMenu(){
-      document.getElementById('side-menu').style.width = '0';
-    }
+      function closeSideMenu(){
+        document.getElementById('side-menu').style.width = '0';
+      }
 
-    if (Math.random() > 0.5) {document.body.querySelector(".selfie").src="./selfies/smiley_selfie_2.jpg"} // I couldn't decide which selfie to use, so I decided to leaver it up to fate.
-  </script>
-  <script  src="./carousel_script.js"></script>
-</body>
+      if (Math.random() > 0.5) {document.body.querySelector(".selfie").src="./selfies/smiley_selfie_2.jpg"} // I couldn't decide which selfie to use, so I decided to leaver it up to fate.
+    </script>
+    <script  src="./carousel_script.js"></script>
+  </body>
+</html>
